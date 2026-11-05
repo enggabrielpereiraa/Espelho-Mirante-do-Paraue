@@ -1,8 +1,22 @@
 {
   "NOME_PROJETO": "Mirante do Parque",
   "NOME_SISTEMA": "Espelho 3D",
-  "SEU_NOME": "Gabriel Pereira",
-  "SEU_CONTATO": "(11) 9xxxx-xxxx · seuemail@dominio.com",
+  "SEU_NOME": "Gap Automação",
+  "SEU_CONTATO": "@_gapautomacao · automacaogap@gmail.com · (11) 97437-2855",
+  "CONTATOS": [
+    {
+      "rotulo": "Instagram",
+      "valor": "@_gapautomacao"
+    },
+    {
+      "rotulo": "E-mail",
+      "valor": "automacaogap@gmail.com"
+    },
+    {
+      "rotulo": "Telefone",
+      "valor": "(11) 97437-2855"
+    }
+  ],
   "VOZ": "kokoro",
   "VOZ_OPCOES": {
     "edge": {

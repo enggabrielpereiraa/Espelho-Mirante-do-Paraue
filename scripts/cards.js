@@ -61,9 +61,12 @@ function htmlFinal() {
   .nome{font-size:${76 * s}px;font-weight:700;letter-spacing:-.025em;line-height:1.05}
   .rule{width:${64 * s}px;height:2px;background:var(--cu);margin:${6 * s}px 0}
   .frase{font-size:${30 * s}px;font-weight:500;opacity:.9;line-height:1.3}
-  .ct{font-family:'JetBrains Mono',monospace;font-size:${22 * s}px;color:var(--fg);opacity:.78;margin-top:${10 * s}px;letter-spacing:.02em}
+  .cts{display:flex;${VERT ? 'flex-direction:column;gap:' + 16 * s + 'px' : 'gap:' + 40 * s + 'px'};margin-top:${14 * s}px;justify-content:center}
+  .ct{display:flex;flex-direction:column;gap:${6 * s}px;align-items:center}
+  .ct span{font-family:'JetBrains Mono',monospace;font-size:${13 * s}px;color:var(--cu);letter-spacing:.24em;text-transform:uppercase}
+  .ct b{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:${22 * s}px;color:var(--fg);opacity:.9;letter-spacing:.01em}
   </style><div class="dim"></div><div class="c"><div class="card"><div class="lbl mono">${cfg.NOME_SISTEMA} · ${cfg.NOME_PROJETO}</div><div class="nome">${cfg.SEU_NOME}</div><div class="rule"></div>
-  <div class="frase">Sistema sob medida para incorporadoras e condomínios</div><div class="ct">${cfg.SEU_CONTATO}</div></div></div>`;
+  <div class="frase">Sistema sob medida para incorporadoras e condomínios</div>${cfg.CONTATOS ? `<div class="cts">${cfg.CONTATOS.map(x => `<div class="ct"><span>${x.rotulo}</span><b>${x.valor}</b></div>`).join('')}</div>` : `<div class="cts"><div class="ct"><b>${cfg.SEU_CONTATO}</b></div></div>`}</div></div>`;
 }
 
 function htmlLegenda(q) {
