@@ -1,227 +1,227 @@
 1
-00:00:02,920 --> 00:00:04,620
+00:00:02,920 --> 00:00:04,460
 Este é o Mirante do Parque.
 
 2
-00:00:04,640 --> 00:00:07,860
+00:00:04,480 --> 00:00:07,800
 E este é o sistema
 que a incorporadora usa pra vender
 
 3
-00:00:07,880 --> 00:00:11,960
+00:00:07,820 --> 00:00:12,100
 os apartamentos e, depois
 da entrega, cuidar do prédio.
 
 4
-00:00:11,980 --> 00:00:14,830
+00:00:12,120 --> 00:00:14,990
 Tudo começa aqui, no prédio em 3D.
 
 5
-00:00:15,880 --> 00:00:19,120
+00:00:16,034 --> 00:00:19,364
 Cada janela mostra
 a situação do apartamento.
 
 6
-00:00:19,140 --> 00:00:22,000
+00:00:19,414 --> 00:00:22,414
 Verde está disponível,
 amarelo está reservado,
 
 7
-00:00:22,020 --> 00:00:24,120
+00:00:22,434 --> 00:00:24,594
 e vermelho já foi vendido.
 
 8
-00:00:24,140 --> 00:00:25,920
+00:00:24,614 --> 00:00:26,874
 O espelho de vendas, aqui do lado,
 
 9
-00:00:25,940 --> 00:00:28,840
+00:00:26,894 --> 00:00:29,494
 mostra a mesma coisa em forma de tabela.
 
 10
-00:00:28,860 --> 00:00:31,510
+00:00:29,514 --> 00:00:32,064
 Passou o mouse num, acende no outro.
 
 11
-00:00:32,554 --> 00:00:36,114
+00:00:33,147 --> 00:00:37,107
 Clicando num apartamento disponível,
 o corretor vê o preço,
 
 12
-00:00:36,134 --> 00:00:38,854
+00:00:37,127 --> 00:00:39,977
 o valor do metro quadrado
 e a planta humanizada.
 
 13
-00:00:38,874 --> 00:00:42,354
+00:00:40,047 --> 00:00:43,447
 E pode abrir o apartamento
 em 3D, já mobiliado,
 
 14
-00:00:42,374 --> 00:00:44,324
+00:00:43,467 --> 00:00:45,497
 com a metragem de cada ambiente.
 
 15
-00:00:45,670 --> 00:00:48,750
+00:00:46,802 --> 00:00:50,062
 Dali mesmo, ele reserva
 a unidade pra um cliente
 
 16
-00:00:48,770 --> 00:00:51,060
+00:00:50,082 --> 00:00:52,342
 ou gera uma proposta com desconto.
 
 17
-00:00:51,110 --> 00:00:52,690
+00:00:52,362 --> 00:00:54,082
 O prédio muda de cor na hora,
 
 18
-00:00:52,710 --> 00:00:55,920
+00:00:54,102 --> 00:00:57,352
 e a proposta já aparece
 na lista da equipe comercial.
 
 19
-00:00:57,050 --> 00:01:00,390
+00:00:58,443 --> 00:01:02,323
 Na visão geral, a diretoria
 acompanha o VGV vendido,
 
 20
-00:01:00,410 --> 00:01:03,540
+00:01:02,343 --> 00:01:05,213
 as vendas por mês
 e o ranking dos corretores.
 
 21
-00:01:03,610 --> 00:01:07,310
+00:01:05,343 --> 00:01:09,023
 E no CRM, cada cliente
 fica numa etapa do funil.
 
 22
-00:01:07,330 --> 00:01:09,100
+00:01:09,043 --> 00:01:10,773
 É só mover o cartão.
 
 23
-00:01:09,863 --> 00:01:13,283
+00:01:11,504 --> 00:01:15,164
 Dá pra ver o prédio de dia,
 no fim da tarde ou à noite,
 
 24
-00:01:13,303 --> 00:01:16,013
+00:01:15,184 --> 00:01:17,914
 do jeito que fica melhor na apresentação.
 
 25
-00:01:17,021 --> 00:01:19,141
+00:01:18,955 --> 00:01:21,135
 Depois que as chaves são entregues,
 
 26
-00:01:19,161 --> 00:01:22,301
+00:01:21,155 --> 00:01:24,345
 o mesmo prédio vira
 a ferramenta da administração.
 
 27
-00:01:22,321 --> 00:01:25,341
+00:01:24,375 --> 00:01:27,555
 No modo condomínio,
 aparecem as encomendas,
 
 28
-00:01:25,361 --> 00:01:28,731
+00:01:27,575 --> 00:01:31,025
 os chamados e as contas
 em atraso de cada apartamento.
 
 29
-00:01:29,882 --> 00:01:33,282
+00:01:32,136 --> 00:01:35,586
 Clicando no apartamento
 do Rafael, abre a ficha dele.
 
 30
-00:01:33,302 --> 00:01:37,022
+00:01:35,656 --> 00:01:39,536
 As duas encomendas que estão
 na portaria, o vazamento na cozinha
 
 31
-00:01:37,042 --> 00:01:41,002
+00:01:39,556 --> 00:01:43,636
 que ainda não foi resolvido,
 e a cota de outubro em atraso.
 
 32
-00:01:41,022 --> 00:01:44,062
+00:01:43,656 --> 00:01:46,736
 A portaria avisa pelo WhatsApp,
 com a mensagem pronta,
 
 33
-00:01:44,082 --> 00:01:46,392
+00:01:46,756 --> 00:01:49,146
 e registra a entrega com um clique.
 
 34
-00:01:47,283 --> 00:01:50,283
+00:01:50,034 --> 00:01:53,214
 Na portaria, os armários
 mostram o que está ocupado
 
 35
-00:01:50,303 --> 00:01:53,013
+00:01:53,234 --> 00:01:55,924
 e o que está parado há mais de três dias.
 
 36
-00:01:53,183 --> 00:01:57,373
+00:01:56,094 --> 00:02:00,284
 Cada volume tem foto,
 código de retirada e QR Code.
 
 37
-00:01:58,126 --> 00:02:00,036
+00:02:01,052 --> 00:02:02,962
 Os chamados têm prazo.
 
 38
-00:02:00,086 --> 00:02:02,286
+00:02:03,052 --> 00:02:05,572
 O que passou do prazo fica em vermelho,
 
 39
-00:02:02,306 --> 00:02:04,546
+00:02:05,592 --> 00:02:07,632
 e o que está na garantia da construtora
 
 40
-00:02:04,566 --> 00:02:07,016
+00:02:07,652 --> 00:02:09,942
 vai direto pra assistência técnica.
 
 41
-00:02:07,246 --> 00:02:10,126
+00:02:10,152 --> 00:02:13,472
 No financeiro, a inadimplência
 é calculada sozinha,
 
 42
-00:02:10,146 --> 00:02:12,556
+00:02:13,492 --> 00:02:15,682
 e a segunda via já sai com Pix.
 
 43
-00:02:13,462 --> 00:02:16,312
+00:02:16,614 --> 00:02:19,384
 E o morador acompanha tudo pelo celular.
 
 44
-00:02:16,382 --> 00:02:19,622
+00:02:19,514 --> 00:02:22,974
 As encomendas esperando por ele,
 as contas, os chamados,
 
 45
-00:02:19,642 --> 00:02:22,922
+00:02:22,994 --> 00:02:26,554
 e até quanto de água e gás
 o apartamento gastou,
 
 46
-00:02:22,942 --> 00:02:25,192
+00:02:26,574 --> 00:02:28,804
 comparado com a média do prédio.
 
 47
-00:02:25,863 --> 00:02:27,663
+00:02:29,504 --> 00:02:31,424
 Venda e condomínio no mesmo lugar,
 
 48
-00:02:27,683 --> 00:02:30,983
+00:02:31,444 --> 00:02:34,804
 a partir do prédio
 que o cliente já conhece.
 
 49
-00:02:31,003 --> 00:02:32,903
+00:02:34,824 --> 00:02:36,744
 Funciona no computador e no celular,
 
 50
-00:02:32,923 --> 00:02:36,293
+00:02:36,764 --> 00:02:40,194
 e é feito sob medida
 pra cada empreendimento.
 
