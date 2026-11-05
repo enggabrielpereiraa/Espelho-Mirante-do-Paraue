@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Baixa (via npm, que funciona mesmo em redes restritas) os modelos usados offline:
 #  - Kokoro-82M q8 (voz)            -> models/kokoro/kokoro-q8.onnx
-#  - vozes pt-BR do Kokoro           -> models/kokoro/voices-pt.npz (pm_alex, pm_santa, pf_dora)
+#  - vozes pt-BR do Kokoro           -> models/kokoro/voices-pt.npz (pm_alex, pm_santa, pf_dora, af_heart)
 #  - Whisper small CTranslate2 int8  -> models/whisper-small/ (conferência de pronúncia e sincronia)
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -13,12 +13,12 @@ if [ ! -f models/kokoro/kokoro-q8.onnx ]; then
   echo "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478  models/kokoro/kokoro-q8.onnx" | sha256sum -c -
   rm -rf "$TMP"/package
 fi
-if [ ! -f models/kokoro/voices-pt.npz ]; then
-  (cd "$TMP" && npm pack expo-kokoro@1.1.9 --silent >/dev/null && tar xzf expo-kokoro-1.1.9.tgz package/build/voices/pm_alex.bin package/build/voices/pm_santa.bin package/build/voices/pf_dora.bin)
+if [ ! -f models/kokoro/voices-pt.npz ] || ! python3 -c "import numpy as np,sys; sys.exit('af_heart' not in np.load('models/kokoro/voices-pt.npz'))"; then
+  (cd "$TMP" && npm pack expo-kokoro@1.1.9 --silent >/dev/null && tar xzf expo-kokoro-1.1.9.tgz package/build/voices/pm_alex.bin package/build/voices/pm_santa.bin package/build/voices/pf_dora.bin package/build/voices/af_heart.bin)
   python3 -c "
 import numpy as np,sys
 d='$TMP/package/build/voices/'
-np.savez('models/kokoro/voices-pt.npz',**{n:np.fromfile(d+n+'.bin',dtype=np.float32).reshape(510,1,256) for n in ['pm_alex','pm_santa','pf_dora']})"
+np.savez('models/kokoro/voices-pt.npz',**{n:np.fromfile(d+n+'.bin',dtype=np.float32).reshape(510,1,256) for n in ['pm_alex','pm_santa','pf_dora','af_heart']})"
   rm -rf "$TMP"/package
 fi
 if [ ! -f models/whisper-small/model.bin ]; then

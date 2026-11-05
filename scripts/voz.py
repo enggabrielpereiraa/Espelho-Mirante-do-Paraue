@@ -4,7 +4,7 @@
 Uso: python3 scripts/voz.py [--cenas C05,C09] [--transcrever]
 
 Motores (config.json -> VOZ):
-  kokoro     -> Kokoro-82M (offline), voz masculina pt-BR "pm_alex" (padrão neste ambiente)
+  kokoro     -> Kokoro-82M (offline); voz ou mistura de vozes em config.json (VOZ_OPCOES.kokoro)
   edge       -> edge-tts pt-BR-AntonioNeural (precisa de acesso a speech.platform.bing.com)
   elevenlabs -> API ElevenLabs (chave e voz lidas de variáveis de ambiente)
 Saída: audio/Cxx.wav (48 kHz, -16 LUFS / -1.5 dBTP), audio/Cxx.palavras.json, audio/duracoes.json
@@ -38,10 +38,16 @@ def tts_kokoro(texto, wav_out):
     if _kokoro is None:
         _kokoro = Kokoro(os.path.join(MODELS, 'kokoro', 'kokoro-q8.onnx'), os.path.join(MODELS, 'kokoro', 'voices-pt.npz'))
     o = CFG['VOZ_OPCOES']['kokoro']
+    # "mistura": média ponderada de vozes do Kokoro (ex.: 65% pf_dora + 35% af_heart)
+    if o.get('mistura'):
+        vs = np.load(os.path.join(MODELS, 'kokoro', 'voices-pt.npz'))
+        voz_ = sum(p * vs[n] for n, p in o['mistura'].items()).astype(np.float32)
+    else:
+        voz_ = o['voz']
     partes = []
     sr = 24000
     for i, f in enumerate(frases(texto)):
-        a, sr = _kokoro.create(f, voice=o['voz'], speed=o['velocidade'], lang='pt-br')
+        a, sr = _kokoro.create(f, voice=voz_, speed=o['velocidade'], lang='pt-br')
         a = aparar(a, sr)
         partes.append(a)
         if i < len(frases(texto)) - 1:

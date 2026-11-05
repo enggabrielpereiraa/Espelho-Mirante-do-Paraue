@@ -5,9 +5,23 @@
   "SEU_CONTATO": "(11) 9xxxx-xxxx · seuemail@dominio.com",
   "VOZ": "kokoro",
   "VOZ_OPCOES": {
-    "edge": { "voz": "pt-BR-AntonioNeural", "rate": "-4%" },
-    "elevenlabs": { "voice_id_env": "ELEVENLABS_VOICE", "key_env": "ELEVENLABS_KEY", "model": "eleven_multilingual_v2" },
-    "kokoro": { "voz": "pm_alex", "velocidade": 0.96 }
+    "edge": {
+      "voz": "pt-BR-AntonioNeural",
+      "rate": "-4%"
+    },
+    "elevenlabs": {
+      "voice_id_env": "ELEVENLABS_VOICE",
+      "key_env": "ELEVENLABS_KEY",
+      "model": "eleven_multilingual_v2"
+    },
+    "kokoro": {
+      "voz": "pf_dora",
+      "mistura": {
+        "pf_dora": 0.65,
+        "af_heart": 0.35
+      },
+      "velocidade": 0.94
+    }
   },
   "MUSICA": "assets/musica.mp3",
   "VERTICAL": true,

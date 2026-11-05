@@ -57,7 +57,7 @@ Para só remontar (por exemplo, depois de trocar o `SEU_CONTATO` no `config.json
 
 Em `config.json`, campo `VOZ`:
 
-- `"kokoro"` (padrão): offline, voz masculina pt-BR `pm_alex`. Ajuste a velocidade em `VOZ_OPCOES.kokoro.velocidade` (1,0 = normal).
+- `"kokoro"` (padrão): offline. Hoje está com voz feminina, uma mistura de 65% `pf_dora` + 35% `af_heart` (`VOZ_OPCOES.kokoro.mistura`). Para uma voz só, apague `mistura` e use `voz` (`pf_dora` é feminina; `pm_alex` e `pm_santa` são masculinas). Ajuste a velocidade em `velocidade` (1,0 = normal). As amostras ouvidas na escolha estão em `amostras-voz/`.
 - `"edge"`: `pt-BR-AntonioNeural`, grátis, precisa de internet com acesso a `speech.platform.bing.com`.
 - `"elevenlabs"`: melhor qualidade. Defina a chave e a voz **no ambiente**, nunca em arquivo:
 

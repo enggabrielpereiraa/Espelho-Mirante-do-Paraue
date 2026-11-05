@@ -2,11 +2,11 @@
 
 Registro do que foi decidido durante a produção, e por quê. Em ordem de impacto.
 
-## 1. Voz: Kokoro (offline) no lugar do edge-tts
-- A rede deste ambiente bloqueia `speech.platform.bing.com` (proxy responde 403), então o `edge-tts` com `pt-BR-AntonioNeural` não funciona aqui. A ElevenLabs também está bloqueada (e não havia chave).
-- Usei o **Kokoro-82M** (modelo neural, roda offline na CPU) com a voz masculina pt-BR **`pm_alex`**, velocidade 0,96 (equivale ao `--rate=-4%` pedido). O modelo e a voz foram obtidos pelo npm (`kokoro-q8-shards`, `expo-kokoro`), o único caminho liberado; `scripts/baixar-modelos.sh` refaz isso e confere o SHA-256 do modelo.
-- O `config.json` ganhou a opção `"VOZ": "kokoro"`. As opções `edge` e `elevenlabs` continuam implementadas em `scripts/voz.py`: numa máquina com internet aberta, basta trocar `VOZ` e rodar `npm run cena -- C01 C02 … --voz` (ou `npm run video`).
-- A fala é sintetizada **frase a frase**, com 0,32 s de pausa depois de cada ponto final; vírgulas ficam com a pausa natural do modelo. Silêncio do começo e do fim de cada frase é aparado.
+## 1. Voz: Kokoro (offline), feminina, no lugar do edge-tts
+- A rede deste ambiente bloqueia `speech.platform.bing.com` (proxy responde 403), então o `edge-tts` não funciona aqui. A ElevenLabs (`api.elevenlabs.io`) também está bloqueada.
+- Usei o **Kokoro-82M** (modelo neural, roda offline na CPU). A primeira versão saiu com a voz masculina `pm_alex`; a pedido, a narração passou a ser **feminina**: mistura de **65% `pf_dora` (pt-BR) + 35% `af_heart`**, velocidade 0,94 (amostra "D" em `amostras-voz/`). A `af_heart` é a voz mais natural do modelo; misturada em minoria, deixa a entonação mais de locutora sem tirar o sotaque brasileiro. O modelo e as vozes vêm pelo npm (`kokoro-q8-shards`, `expo-kokoro`); `scripts/baixar-modelos.sh` refaz isso e confere o SHA-256 do modelo.
+- **Limite honesto:** mesmo misturada, é uma voz sintética, e um ouvido atento percebe. Para não parecer IA, os caminhos são ElevenLabs, Microsoft (Francisca/Thalita) ou uma locutora gravando as 12 falas. Os dois primeiros já estão implementados em `scripts/voz.py`: basta liberar o domínio na rede e trocar `VOZ` no `config.json`.
+- A fala é sintetizada **frase a frase**, com 0,32 s de pausa depois de cada ponto final; vírgulas ficam com a pausa natural do modelo. O silêncio do começo e do fim de cada frase é aparado.
 
 ## 2. Gravação quadro a quadro (relógio virtual) no lugar do screencast em tempo real
 - A máquina não tem GPU. O 3D roda em SwiftShader (CPU): parado fica a 60 fps porque a demo só redesenha quando algo muda, mas **girando cai para ~3 fps** em 1920×1080. O screencast do CDP (e o `recordVideo`, plano B) gravariam exatamente isso: vídeo travado.
