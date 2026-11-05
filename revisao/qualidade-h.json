@@ -1,21 +1,33 @@
 {
- "duracao": 158.44,
+ "duracao": 162.24,
  "duracao_ok": true,
  "loudness_LUFS": -16.0,
- "true_peak_dBTP": -4.1,
+ "true_peak_dBTP": -4.0,
  "loudness_ok": true,
  "blackdetect": [],
  "freezedetect": [
   [
-   52.9667,
-   2.86667
+   16.6667,
+   2.53333
   ],
   [
-   57.2667,
-   3.03333
+   54.3333,
+   2.93333
+  ],
+  [
+   58.6667,
+   3.56667
+  ],
+  [
+   62.4667,
+   2.66667
+  ],
+  [
+   101.033,
+   2.5
   ]
  ],
- "quadros_revisao": 53,
+ "quadros_revisao": 54,
  "sincronia_fora": [],
  "transcricao_diferencas": [
   {
@@ -23,20 +35,24 @@
    "ouvido": "Assou"
   },
   {
-   "roteiro": "num,",
-   "ouvido": "e nun"
-  },
-  {
-   "roteiro": "as chaves",
-   "ouvido": "a chave"
+   "roteiro": "",
+   "ouvido": "e"
   },
   {
    "roteiro": "QR Code.",
-   "ouvido": "QR-Code."
+   "ouvido": "que é recode."
   },
   {
-   "roteiro": "",
-   "ouvido": "a"
+   "roteiro": "a",
+   "ouvido": "há"
+  },
+  {
+   "roteiro": "é",
+   "ouvido": ""
+  },
+  {
+   "roteiro": "Pix.",
+   "ouvido": "peaks."
   }
  ]
 }

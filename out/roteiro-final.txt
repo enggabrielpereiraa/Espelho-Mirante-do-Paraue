@@ -1,54 +1,54 @@
 Espelho 3D · Mirante do Parque — roteiro final
-Duração: 02:38.4
+Duração: 02:42.2
 
-[00:00.0 – 00:15.5] C01 · Espelho 3D
+[00:00.0 – 00:15.6] C01 · Espelho 3D
   Legenda: Este é o Mirante do Parque. E este é o sistema que a incorporadora usa pra vender os apartamentos e, depois da entrega, cuidar do prédio. Tudo começa aqui, no prédio em 3D.
   Fala (pronúncia): Este é o Mirante do Parque. E este é o sistema que a incorporadora usa pra vender os apartamentos e, depois da entrega, cuidar do prédio. Tudo começa aqui, no prédio em três dê.
   Tela: #espelho parado 1,5 s; arrastar #stage canvas ~260 px em 3 s (esq→dir); soltar e esperar a inércia
 
-[00:15.5 – 00:32.1] C02 · Espelho de vendas
+[00:15.6 – 00:32.7] C02 · Espelho de vendas
   Legenda: Cada janela mostra a situação do apartamento. Verde está disponível, amarelo está reservado, e vermelho já foi vendido. O espelho de vendas, aqui do lado, mostra a mesma coisa em forma de tabela. Passou o mouse num, acende no outro.
   Tela: hover .mirror button[data-u=602] 0,9 s; hover [data-u=704] 0,9 s; hover [data-u=501] 0,9 s; voltar ao 602
 
-[00:32.1 – 00:45.3] C03 · Planta e apartamento em 3D
+[00:32.7 – 00:46.4] C03 · Planta e apartamento em 3D
   Legenda: Clicando num apartamento disponível, o corretor vê o preço, o valor do metro quadrado e a planta humanizada. E pode abrir o apartamento em 3D, já mobiliado, com a metragem de cada ambiente.
   Fala (pronúncia): Clicando num apartamento disponível, o corretor vê o preço, o valor do metro quadrado e a planta humanizada. E pode abrir o apartamento em três dê, já mobiliado, com a metragem de cada ambiente.
   Tela: clicar .mirror button[data-u=602]; hover preço e planta; clicar #panelBody [data-act=apto3d]; girar sozinho 4 s, arrastar para inclinar; clicar #apto-fechar
 
-[00:45.3 – 00:56.9] C04 · Reserva e proposta
+[00:46.4 – 00:58.3] C04 · Reserva e proposta
   Legenda: Dali mesmo, ele reserva a unidade pra um cliente ou gera uma proposta com desconto. O prédio muda de cor na hora, e a proposta já aparece na lista da equipe comercial.
   Tela: clicar [data-act=reservar]; clicar #scrim button[type=submit]; 602 amarelo 1,5 s; clicar [data-act=proposta]; #pp-desc = 3; enviar; segurar #propostas 1,5 s
 
-[00:56.6 – 01:09.7] C05 · Visão geral e CRM
+[00:58.0 – 01:11.4] C05 · Visão geral e CRM
   Legenda: Na visão geral, a diretoria acompanha o VGV vendido, as vendas por mês e o ranking dos corretores. E no CRM, cada cliente fica numa etapa do funil. É só mover o cartão.
   Fala (pronúncia): Na visão geral, a diretoria acompanha o vê gê vê vendido, as vendas por mês e o ranking dos corretores. E no cê erre eme, cada cliente fica numa etapa do funil. É só mover o cartão.
   Tela: #geral, rolar até o ranking; #clientes, clicar [data-act=avancar] no 1º cartão; segurar 1 s
 
-[01:09.4 – 01:16.6] C06 · Dia, fim de tarde e noite
+[01:11.1 – 01:18.5] C06 · Dia, fim de tarde e noite
   Legenda: Dá pra ver o prédio de dia, no fim da tarde ou à noite, do jeito que fica melhor na apresentação.
   Tela: #espelho; luz dia; luz tarde; luz noite; girar um pouco
 
-[01:16.6 – 01:29.5] C07 · Modo condomínio
+[01:18.5 – 01:31.7] C07 · Modo condomínio
   Legenda: Depois que as chaves são entregues, o mesmo prédio vira a ferramenta da administração. No modo condomínio, aparecem as encomendas, os chamados e as contas em atraso de cada apartamento.
   Tela: modo condo; abas encomendas, chamados, financeiro (1,5 s cada); voltar a encomendas
 
-[01:29.5 – 01:47.2] C08 · Ficha do morador
+[01:31.7 – 01:49.9] C08 · Ficha do morador
   Legenda: Clicando no apartamento do Rafael, abre a ficha dele. As duas encomendas que estão na portaria, o vazamento na cozinha que ainda não foi resolvido, e a cota de outubro em atraso. A portaria avisa pelo WhatsApp, com a mensagem pronta, e registra a entrega com um clique.
   Tela: clicar .mirror button[data-u=501]; rolar #panelBody; hover [data-act=avisar] (sem clicar); clicar [data-act=entregar]
 
-[01:46.9 – 01:58.0] C09 · Portaria
+[01:49.6 – 02:00.9] C09 · Portaria
   Legenda: Na portaria, os armários mostram o que está ocupado e o que está parado há mais de três dias. Cada volume tem foto, código de retirada e QR Code.
   Fala (pronúncia): Na portaria, os armários mostram o que está ocupado e o que está parado há mais de três dias. Cada volume tem foto, código de retirada e QR code.
   Tela: #portaria; hover armários parados; clicar 1º .enc-grid [data-act=encdet]; segurar 2,5 s; Escape
 
-[01:57.7 – 02:13.3] C10 · Chamados e financeiro
+[02:00.6 – 02:16.5] C10 · Chamados e financeiro
   Legenda: Os chamados têm prazo. O que passou do prazo fica em vermelho, e o que está na garantia da construtora vai direto pra assistência técnica. No financeiro, a inadimplência é calculada sozinha, e a segunda via já sai com Pix.
   Tela: #chamados, hover cartão fora do prazo; #financeiro, clicar 1º .cota.atrasada; clicar #scrim [data-act=pix]; segurar 2 s; Escape
 
-[02:13.0 – 02:25.7] C11 · App do morador
+[02:16.2 – 02:29.4] C11 · App do morador
   Legenda: E o morador acompanha tudo pelo celular. As encomendas esperando por ele, as contas, os chamados, e até quanto de água e gás o apartamento gastou, comparado com a média do prédio.
   Tela: #morador 1,5 s; mtela correspondencias 2 s; mtela inicio; mtela consumo, segurar
 
-[02:25.4 – 02:38.4] C12 · Fechamento (card final)
+[02:29.1 – 02:42.2] C12 · Fechamento (card final)
   Legenda: Venda e condomínio no mesmo lugar, a partir do prédio que o cliente já conhece. Funciona no computador e no celular, e é feito sob medida pra cada empreendimento.
   Tela: (fora da gravação) #espelho, unsel, modo vendas, luz tarde; girar lentamente; card final aos 3 s
