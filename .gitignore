@@ -1,0 +1,6 @@
+node_modules/
+models/
+build/
+audio/*.raw.wav
+__pycache__/
+*.pyc

@@ -1,0 +1,42 @@
+{
+ "duracao": 158.44,
+ "duracao_ok": true,
+ "loudness_LUFS": -16.0,
+ "true_peak_dBTP": -4.1,
+ "loudness_ok": true,
+ "blackdetect": [],
+ "freezedetect": [
+  [
+   52.9667,
+   2.86667
+  ],
+  [
+   57.2667,
+   3.03333
+  ]
+ ],
+ "quadros_revisao": 53,
+ "sincronia_fora": [],
+ "transcricao_diferencas": [
+  {
+   "roteiro": "Passou",
+   "ouvido": "Assou"
+  },
+  {
+   "roteiro": "num,",
+   "ouvido": "e nun"
+  },
+  {
+   "roteiro": "as chaves",
+   "ouvido": "a chave"
+  },
+  {
+   "roteiro": "QR Code.",
+   "ouvido": "QR-Code."
+  },
+  {
+   "roteiro": "",
+   "ouvido": "a"
+  }
+ ]
+}

@@ -1,0 +1,149 @@
+[
+  {
+    "id": "C01",
+    "titulo": "Espelho 3D",
+    "fala": "Este é o Mirante do Parque. E este é o sistema que a incorporadora usa pra vender os apartamentos e, depois da entrega, cuidar do prédio. Tudo começa aqui, no prédio em três dê.",
+    "legenda": "Este é o Mirante do Parque. E este é o sistema que a incorporadora usa pra vender os apartamentos e, depois da entrega, cuidar do prédio. Tudo começa aqui, no prédio em 3D.",
+    "acoes": [
+      "#espelho parado 1,5 s",
+      "arrastar #stage canvas ~260 px em 3 s (esq→dir)",
+      "soltar e esperar a inércia"
+    ]
+  },
+  {
+    "id": "C02",
+    "titulo": "Espelho de vendas",
+    "fala": "Cada janela mostra a situação do apartamento. Verde está disponível, amarelo está reservado, e vermelho já foi vendido. O espelho de vendas, aqui do lado, mostra a mesma coisa em forma de tabela. Passou o mouse num, acende no outro.",
+    "legenda": "Cada janela mostra a situação do apartamento. Verde está disponível, amarelo está reservado, e vermelho já foi vendido. O espelho de vendas, aqui do lado, mostra a mesma coisa em forma de tabela. Passou o mouse num, acende no outro.",
+    "acoes": [
+      "hover .mirror button[data-u=602] 0,9 s",
+      "hover [data-u=704] 0,9 s",
+      "hover [data-u=501] 0,9 s",
+      "voltar ao 602"
+    ]
+  },
+  {
+    "id": "C03",
+    "titulo": "Planta e apartamento em 3D",
+    "fala": "Clicando num apartamento disponível, o corretor vê o preço, o valor do metro quadrado e a planta humanizada. E pode abrir o apartamento em três dê, já mobiliado, com a metragem de cada ambiente.",
+    "legenda": "Clicando num apartamento disponível, o corretor vê o preço, o valor do metro quadrado e a planta humanizada. E pode abrir o apartamento em 3D, já mobiliado, com a metragem de cada ambiente.",
+    "acoes": [
+      "clicar .mirror button[data-u=602]",
+      "hover preço e planta",
+      "clicar #panelBody [data-act=apto3d]",
+      "girar sozinho 4 s, arrastar para inclinar",
+      "clicar #apto-fechar"
+    ]
+  },
+  {
+    "id": "C04",
+    "titulo": "Reserva e proposta",
+    "fala": "Dali mesmo, ele reserva a unidade pra um cliente ou gera uma proposta com desconto. O prédio muda de cor na hora, e a proposta já aparece na lista da equipe comercial.",
+    "legenda": "Dali mesmo, ele reserva a unidade pra um cliente ou gera uma proposta com desconto. O prédio muda de cor na hora, e a proposta já aparece na lista da equipe comercial.",
+    "acoes": [
+      "clicar [data-act=reservar]",
+      "clicar #scrim button[type=submit]",
+      "602 amarelo 1,5 s",
+      "clicar [data-act=proposta]",
+      "#pp-desc = 3",
+      "enviar",
+      "segurar #propostas 1,5 s"
+    ]
+  },
+  {
+    "id": "C05",
+    "titulo": "Visão geral e CRM",
+    "fala": "Na visão geral, a diretoria acompanha o vê gê vê vendido, as vendas por mês e o ranking dos corretores. E no cê erre eme, cada cliente fica numa etapa do funil. É só mover o cartão.",
+    "legenda": "Na visão geral, a diretoria acompanha o VGV vendido, as vendas por mês e o ranking dos corretores. E no CRM, cada cliente fica numa etapa do funil. É só mover o cartão.",
+    "acoes": [
+      "#geral, rolar até o ranking",
+      "#clientes, clicar [data-act=avancar] no 1º cartão",
+      "segurar 1 s"
+    ]
+  },
+  {
+    "id": "C06",
+    "titulo": "Dia, fim de tarde e noite",
+    "fala": "Dá pra ver o prédio de dia, no fim da tarde ou à noite, do jeito que fica melhor na apresentação.",
+    "legenda": "Dá pra ver o prédio de dia, no fim da tarde ou à noite, do jeito que fica melhor na apresentação.",
+    "acoes": [
+      "#espelho",
+      "luz dia",
+      "luz tarde",
+      "luz noite",
+      "girar um pouco"
+    ]
+  },
+  {
+    "id": "C07",
+    "titulo": "Modo condomínio",
+    "fala": "Depois que as chaves são entregues, o mesmo prédio vira a ferramenta da administração. No modo condomínio, aparecem as encomendas, os chamados e as contas em atraso de cada apartamento.",
+    "legenda": "Depois que as chaves são entregues, o mesmo prédio vira a ferramenta da administração. No modo condomínio, aparecem as encomendas, os chamados e as contas em atraso de cada apartamento.",
+    "acoes": [
+      "modo condo",
+      "abas encomendas, chamados, financeiro (1,5 s cada)",
+      "voltar a encomendas"
+    ]
+  },
+  {
+    "id": "C08",
+    "titulo": "Ficha do morador",
+    "fala": "Clicando no apartamento do Rafael, abre a ficha dele. As duas encomendas que estão na portaria, o vazamento na cozinha que ainda não foi resolvido, e a cota de outubro em atraso. A portaria avisa pelo WhatsApp, com a mensagem pronta, e registra a entrega com um clique.",
+    "legenda": "Clicando no apartamento do Rafael, abre a ficha dele. As duas encomendas que estão na portaria, o vazamento na cozinha que ainda não foi resolvido, e a cota de outubro em atraso. A portaria avisa pelo WhatsApp, com a mensagem pronta, e registra a entrega com um clique.",
+    "acoes": [
+      "clicar .mirror button[data-u=501]",
+      "rolar #panelBody",
+      "hover [data-act=avisar] (sem clicar)",
+      "clicar [data-act=entregar]"
+    ]
+  },
+  {
+    "id": "C09",
+    "titulo": "Portaria",
+    "fala": "Na portaria, os armários mostram o que está ocupado e o que está parado há mais de três dias. Cada volume tem foto, código de retirada e QR code.",
+    "legenda": "Na portaria, os armários mostram o que está ocupado e o que está parado há mais de três dias. Cada volume tem foto, código de retirada e QR Code.",
+    "acoes": [
+      "#portaria",
+      "hover armários parados",
+      "clicar 1º .enc-grid [data-act=encdet]",
+      "segurar 2,5 s",
+      "Escape"
+    ]
+  },
+  {
+    "id": "C10",
+    "titulo": "Chamados e financeiro",
+    "fala": "Os chamados têm prazo. O que passou do prazo fica em vermelho, e o que está na garantia da construtora vai direto pra assistência técnica. No financeiro, a inadimplência é calculada sozinha, e a segunda via já sai com Pix.",
+    "legenda": "Os chamados têm prazo. O que passou do prazo fica em vermelho, e o que está na garantia da construtora vai direto pra assistência técnica. No financeiro, a inadimplência é calculada sozinha, e a segunda via já sai com Pix.",
+    "acoes": [
+      "#chamados, hover cartão fora do prazo",
+      "#financeiro, clicar 1º .cota.atrasada",
+      "clicar #scrim [data-act=pix]",
+      "segurar 2 s",
+      "Escape"
+    ]
+  },
+  {
+    "id": "C11",
+    "titulo": "App do morador",
+    "fala": "E o morador acompanha tudo pelo celular. As encomendas esperando por ele, as contas, os chamados, e até quanto de água e gás o apartamento gastou, comparado com a média do prédio.",
+    "legenda": "E o morador acompanha tudo pelo celular. As encomendas esperando por ele, as contas, os chamados, e até quanto de água e gás o apartamento gastou, comparado com a média do prédio.",
+    "acoes": [
+      "#morador 1,5 s",
+      "mtela correspondencias 2 s",
+      "mtela inicio",
+      "mtela consumo, segurar"
+    ]
+  },
+  {
+    "id": "C12",
+    "titulo": null,
+    "fala": "Venda e condomínio no mesmo lugar, a partir do prédio que o cliente já conhece. Funciona no computador e no celular, e é feito sob medida pra cada empreendimento.",
+    "legenda": "Venda e condomínio no mesmo lugar, a partir do prédio que o cliente já conhece. Funciona no computador e no celular, e é feito sob medida pra cada empreendimento.",
+    "acoes": [
+      "(fora da gravação) #espelho, unsel, modo vendas, luz tarde",
+      "girar lentamente",
+      "card final aos 3 s"
+    ]
+  }
+]

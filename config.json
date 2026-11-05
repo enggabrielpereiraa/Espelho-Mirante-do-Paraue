@@ -1,0 +1,15 @@
+{
+  "NOME_PROJETO": "Mirante do Parque",
+  "NOME_SISTEMA": "Espelho 3D",
+  "SEU_NOME": "Gabriel Pereira",
+  "SEU_CONTATO": "(11) 9xxxx-xxxx · seuemail@dominio.com",
+  "VOZ": "kokoro",
+  "VOZ_OPCOES": {
+    "edge": { "voz": "pt-BR-AntonioNeural", "rate": "-4%" },
+    "elevenlabs": { "voice_id_env": "ELEVENLABS_VOICE", "key_env": "ELEVENLABS_KEY", "model": "eleven_multilingual_v2" },
+    "kokoro": { "voz": "pm_alex", "velocidade": 0.96 }
+  },
+  "MUSICA": "assets/musica.mp3",
+  "VERTICAL": true,
+  "PORTA": 8080
+}

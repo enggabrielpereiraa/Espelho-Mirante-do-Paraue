@@ -1,0 +1,19 @@
+{
+  "name": "video-mirante",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Vídeo de apresentação do Espelho 3D gerado por código",
+  "type": "commonjs",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "qrcodejs": "^1.0.0",
+    "three": "^0.160.0"
+  },
+  "scripts": {
+    "video": "node scripts/pipeline.js video",
+    "cena": "node scripts/pipeline.js cena",
+    "montar": "node scripts/pipeline.js montar",
+    "modelos": "bash scripts/baixar-modelos.sh",
+    "servir": "http-server demo -p 8080 -s -c-1"
+  }
+}

@@ -1,0 +1,227 @@
+1
+00:00:02,920 --> 00:00:04,620
+Este é o Mirante do Parque.
+
+2
+00:00:04,640 --> 00:00:07,860
+E este é o sistema
+que a incorporadora usa pra vender
+
+3
+00:00:07,880 --> 00:00:11,960
+os apartamentos e, depois
+da entrega, cuidar do prédio.
+
+4
+00:00:11,980 --> 00:00:14,830
+Tudo começa aqui, no prédio em 3D.
+
+5
+00:00:15,880 --> 00:00:19,120
+Cada janela mostra
+a situação do apartamento.
+
+6
+00:00:19,140 --> 00:00:22,000
+Verde está disponível,
+amarelo está reservado,
+
+7
+00:00:22,020 --> 00:00:24,120
+e vermelho já foi vendido.
+
+8
+00:00:24,140 --> 00:00:25,920
+O espelho de vendas, aqui do lado,
+
+9
+00:00:25,940 --> 00:00:28,840
+mostra a mesma coisa em forma de tabela.
+
+10
+00:00:28,860 --> 00:00:31,510
+Passou o mouse num, acende no outro.
+
+11
+00:00:32,554 --> 00:00:36,114
+Clicando num apartamento disponível,
+o corretor vê o preço,
+
+12
+00:00:36,134 --> 00:00:38,854
+o valor do metro quadrado
+e a planta humanizada.
+
+13
+00:00:38,874 --> 00:00:42,354
+E pode abrir o apartamento
+em 3D, já mobiliado,
+
+14
+00:00:42,374 --> 00:00:44,324
+com a metragem de cada ambiente.
+
+15
+00:00:45,670 --> 00:00:48,750
+Dali mesmo, ele reserva
+a unidade pra um cliente
+
+16
+00:00:48,770 --> 00:00:51,060
+ou gera uma proposta com desconto.
+
+17
+00:00:51,110 --> 00:00:52,690
+O prédio muda de cor na hora,
+
+18
+00:00:52,710 --> 00:00:55,920
+e a proposta já aparece
+na lista da equipe comercial.
+
+19
+00:00:57,050 --> 00:01:00,390
+Na visão geral, a diretoria
+acompanha o VGV vendido,
+
+20
+00:01:00,410 --> 00:01:03,540
+as vendas por mês
+e o ranking dos corretores.
+
+21
+00:01:03,610 --> 00:01:07,310
+E no CRM, cada cliente
+fica numa etapa do funil.
+
+22
+00:01:07,330 --> 00:01:09,100
+É só mover o cartão.
+
+23
+00:01:09,863 --> 00:01:13,283
+Dá pra ver o prédio de dia,
+no fim da tarde ou à noite,
+
+24
+00:01:13,303 --> 00:01:16,013
+do jeito que fica melhor na apresentação.
+
+25
+00:01:17,021 --> 00:01:19,141
+Depois que as chaves são entregues,
+
+26
+00:01:19,161 --> 00:01:22,301
+o mesmo prédio vira
+a ferramenta da administração.
+
+27
+00:01:22,321 --> 00:01:25,341
+No modo condomínio,
+aparecem as encomendas,
+
+28
+00:01:25,361 --> 00:01:28,731
+os chamados e as contas
+em atraso de cada apartamento.
+
+29
+00:01:29,882 --> 00:01:33,282
+Clicando no apartamento
+do Rafael, abre a ficha dele.
+
+30
+00:01:33,302 --> 00:01:37,022
+As duas encomendas que estão
+na portaria, o vazamento na cozinha
+
+31
+00:01:37,042 --> 00:01:41,002
+que ainda não foi resolvido,
+e a cota de outubro em atraso.
+
+32
+00:01:41,022 --> 00:01:44,062
+A portaria avisa pelo WhatsApp,
+com a mensagem pronta,
+
+33
+00:01:44,082 --> 00:01:46,392
+e registra a entrega com um clique.
+
+34
+00:01:47,283 --> 00:01:50,283
+Na portaria, os armários
+mostram o que está ocupado
+
+35
+00:01:50,303 --> 00:01:53,013
+e o que está parado há mais de três dias.
+
+36
+00:01:53,183 --> 00:01:57,373
+Cada volume tem foto,
+código de retirada e QR Code.
+
+37
+00:01:58,126 --> 00:02:00,036
+Os chamados têm prazo.
+
+38
+00:02:00,086 --> 00:02:02,286
+O que passou do prazo fica em vermelho,
+
+39
+00:02:02,306 --> 00:02:04,546
+e o que está na garantia da construtora
+
+40
+00:02:04,566 --> 00:02:07,016
+vai direto pra assistência técnica.
+
+41
+00:02:07,246 --> 00:02:10,126
+No financeiro, a inadimplência
+é calculada sozinha,
+
+42
+00:02:10,146 --> 00:02:12,556
+e a segunda via já sai com Pix.
+
+43
+00:02:13,462 --> 00:02:16,312
+E o morador acompanha tudo pelo celular.
+
+44
+00:02:16,382 --> 00:02:19,622
+As encomendas esperando por ele,
+as contas, os chamados,
+
+45
+00:02:19,642 --> 00:02:22,922
+e até quanto de água e gás
+o apartamento gastou,
+
+46
+00:02:22,942 --> 00:02:25,192
+comparado com a média do prédio.
+
+47
+00:02:25,863 --> 00:02:27,663
+Venda e condomínio no mesmo lugar,
+
+48
+00:02:27,683 --> 00:02:30,983
+a partir do prédio
+que o cliente já conhece.
+
+49
+00:02:31,003 --> 00:02:32,903
+Funciona no computador e no celular,
+
+50
+00:02:32,923 --> 00:02:36,293
+e é feito sob medida
+pra cada empreendimento.
+
