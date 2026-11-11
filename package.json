@@ -14,6 +14,7 @@
     "cena": "node scripts/pipeline.js cena",
     "montar": "node scripts/pipeline.js montar",
     "modelos": "bash scripts/baixar-modelos.sh",
-    "servir": "http-server demo -p 8080 -s -c-1"
+    "servir": "http-server demo -p 8080 -s -c-1",
+    "story": "node scripts/story.js && python3 scripts/story.py"
   }
 }

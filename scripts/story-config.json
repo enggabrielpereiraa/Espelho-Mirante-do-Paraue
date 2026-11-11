@@ -1,0 +1,144 @@
+{
+  "url": "mirante-do-parque / espelho-3d",
+  "rodape": "@_gapautomacao",
+  "layout": {
+    "marcaY": 236,
+    "tituloY": 330,
+    "win": {
+      "x": 40,
+      "y": 770,
+      "w": 1000
+    },
+    "barra": 64,
+    "progY": 1486,
+    "rodapeY": 1590,
+    "finalY": 420
+  },
+  "final": {
+    "pergunta": "Quer um sistema assim?",
+    "frase": "Sistemas sob medida para incorporadoras e condomínios",
+    "cena": "C12",
+    "inicio": 0.5,
+    "dur": 4.2
+  },
+  "transicao": 0.25,
+  "segmentos": [
+    {
+      "rotulo": "Espelho 3D",
+      "titulo": "Seu prédio em 3D",
+      "sub": "Gire, aproxime e clique",
+      "cena": "C01",
+      "inicio": 1.6,
+      "dur": 3.0,
+      "corte": [
+        96,
+        0,
+        1728
+      ]
+    },
+    {
+      "rotulo": "Vendas",
+      "titulo": "Espelho de vendas",
+      "sub": "Disponível, reservado e vendido",
+      "cena": "C02",
+      "inicio": 3.5,
+      "dur": 2.8,
+      "corte": [
+        400,
+        120,
+        1520
+      ]
+    },
+    {
+      "rotulo": "Corretor",
+      "titulo": "Apartamento em 3D",
+      "sub": "Mobiliado, com a metragem de cada ambiente",
+      "cena": "C03",
+      "inicio": 8.3,
+      "dur": 2.8,
+      "corte": [
+        0,
+        40,
+        1600
+      ]
+    },
+    {
+      "rotulo": "Reserva",
+      "titulo": "Reserva em um clique",
+      "sub": "O prédio muda de cor na hora",
+      "cena": "C04",
+      "inicio": 3.0,
+      "dur": 2.4,
+      "corte": [
+        400,
+        120,
+        1520
+      ]
+    },
+    {
+      "rotulo": "Diretoria",
+      "titulo": "VGV, vendas e ranking",
+      "sub": "Tudo num painel só",
+      "cena": "C05",
+      "inicio": 2.4,
+      "dur": 2.6,
+      "corte": [
+        228,
+        0,
+        1500
+      ]
+    },
+    {
+      "rotulo": "Apresentação",
+      "titulo": "Dia, fim de tarde e noite",
+      "sub": "Do jeito que fica melhor",
+      "cena": "C06",
+      "inicio": 1.4,
+      "dur": 2.8,
+      "corte": [
+        96,
+        0,
+        1728
+      ]
+    },
+    {
+      "rotulo": "Condomínio",
+      "titulo": "Encomendas e chamados",
+      "sub": "O mesmo prédio na administração",
+      "cena": "C07",
+      "inicio": 6.1,
+      "dur": 2.8,
+      "corte": [
+        96,
+        0,
+        1728
+      ]
+    },
+    {
+      "rotulo": "Financeiro",
+      "titulo": "2ª via com Pix",
+      "sub": "Inadimplência calculada sozinha",
+      "cena": "C10",
+      "inicio": 13.2,
+      "dur": 2.5,
+      "corte": [
+        360,
+        140,
+        1200
+      ]
+    },
+    {
+      "rotulo": "Morador",
+      "titulo": "App do morador",
+      "sub": "Encomendas, contas e consumo",
+      "cena": "C11",
+      "inicio": 3.4,
+      "dur": 2.8,
+      "corte": [
+        480,
+        0,
+        1440
+      ]
+    }
+  ]
+}

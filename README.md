@@ -11,6 +11,7 @@ O vídeo comercial é gerado por código, de ponta a ponta: voz, gravação da d
 | `legendas.srt` | Legendas em arquivo separado |
 | `thumbnail.png` | 1280×720 |
 | `roteiro-final.txt` | Roteiro com os tempos de cada cena |
+| `story-instagram.mp4` | Story de ~29 s (1080×1920) para o Instagram da Gap Automação, sem narração |
 
 O controle de qualidade fica em `revisao/`: `sincronia.md` (cada clique × a palavra da fala), `qualidade-h.json` / `qualidade-v.json` (loudness, blackdetect, freezedetect, diferenças da transcrição) e um quadro a cada 3 s em `revisao/h/quadros/` e `revisao/v/quadros/`.
 
@@ -67,6 +68,14 @@ export ELEVENLABS_VOICE=...    # ID de uma voz masculina pt-BR da sua conta
 ```
 
 Depois de trocar a voz, gere tudo de novo com `npm run video` (as durações mudam, e a tela acompanha o áudio).
+
+## Story do Instagram
+
+```bash
+npm run story
+```
+
+Monta `out/story-instagram.mp4` a partir das cenas já gravadas (`build/h/`, criadas pelo `npm run video`): o sistema rodando dentro de uma janela de navegador, um título por função e um card final com os contatos do `config.json`. Textos, trechos (cena, início, duração), cortes da tela e posições ficam em `scripts/story-config.json`. Não precisa regravar nada para mudar o story.
 
 ## Música
 
