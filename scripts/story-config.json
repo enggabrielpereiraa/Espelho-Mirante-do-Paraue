@@ -1,4 +1,12 @@
 {
+  "tema": {
+    "fundo": "#EFEAE2",
+    "texto": "#17191C",
+    "acento": "#A9622F",
+    "linha": "rgba(23,25,28,.12)",
+    "cartao": "#FFFFFF",
+    "bitrate": "10M"
+  },
   "url": "mirante-do-parque / espelho-3d",
   "rodape": "@_gapautomacao",
   "layout": {

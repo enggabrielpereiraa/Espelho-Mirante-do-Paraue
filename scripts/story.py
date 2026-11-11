@@ -75,8 +75,8 @@ def main():
     fg = os.path.join(B, 'filtro.txt'); open(fg, 'w').write(';\n'.join(fc))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     sh(['ffmpeg', '-y', '-v', 'error', *inputs, '-filter_complex_script', fg, '-map', '[vout]', '-map', f'{n}:a',
-        '-c:v', 'libx264', '-crf', '18', '-preset', 'slow', '-pix_fmt', 'yuv420p', '-r', str(FPS), '-profile:v', 'high',
-        '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', '-t', f'{total:.3f}', OUT])
+        '-c:v', 'libx264', '-preset', 'slow', '-b:v', S['tema']['bitrate'], '-maxrate', '14M', '-bufsize', '20M', '-pix_fmt', 'yuv420p', '-r', str(FPS), '-profile:v', 'high',
+        '-c:a', 'aac', '-b:a', '128k', '-ar', '48000', '-movflags', '+faststart', '-t', f'{total:.3f}', OUT])
     d = float(sh(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', OUT]).stdout)
     print(f'ok: {OUT} ({d:.2f} s)')
 
