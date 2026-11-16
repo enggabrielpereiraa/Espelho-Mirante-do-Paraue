@@ -25,14 +25,6 @@ function fontCss() {
 
 async function rotasLocais(ctx) {
   const cors = { 'Access-Control-Allow-Origin': '*' };
-  // Correção pontual de um bug da demo: no shader do céu, o "#include <tonemapping_fragment>"
-  // está no meio da linha, o GLSL não compila e o céu some. Só quebramos a linha antes dele.
-  // O arquivo demo/index.html não é alterado (ver DECISOES.md).
-  await ctx.route(/^http:\/\/localhost:\d+\/(index\.html)?(\?.*)?$/, async route => {
-    let html = fs.readFileSync(p('demo', 'index.html'), 'utf8');
-    html = html.replace('gl_FragColor = vec4(c,1.0); #include <tonemapping_fragment>', 'gl_FragColor = vec4(c,1.0);\\n#include <tonemapping_fragment>');
-    route.fulfill({ body: html, contentType: 'text/html; charset=utf-8' });
-  });
   await ctx.route('https://cdn.jsdelivr.net/npm/three@0.160.0/**', route => {
     const rel = new URL(route.request().url()).pathname.replace('/npm/three@0.160.0/', '');
     route.fulfill({ path: p('node_modules', 'three', rel), contentType: 'text/javascript', headers: cors });
@@ -51,7 +43,7 @@ async function rotasLocais(ctx) {
 const CURSOR_SCRIPT = (escala) => `
 (() => {
   const S = ${escala};
-  const css = '*{cursor:none !important;-webkit-user-select:none !important;user-select:none !important} input,textarea{-webkit-user-select:text !important;user-select:text !important} .scrim{backdrop-filter:none !important;-webkit-backdrop-filter:none !important} #__cur{position:fixed;left:0;top:0;width:' + (22*S) + 'px;height:' + (22*S) + 'px;z-index:2147483647;pointer-events:none;transform:translate(-200px,-200px);will-change:transform}'
+  const css = '*{cursor:none !important;-webkit-user-select:none !important;user-select:none !important} input,textarea{-webkit-user-select:text !important;user-select:text !important} #__cur{position:fixed;left:0;top:0;width:' + (22*S) + 'px;height:' + (22*S) + 'px;z-index:2147483647;pointer-events:none;transform:translate(-200px,-200px);will-change:transform}'
     + ' .__ring{position:fixed;left:0;top:0;width:' + (28*S) + 'px;height:' + (28*S) + 'px;margin:' + (-14*S) + 'px 0 0 ' + (-14*S) + 'px;border:' + (2*S) + 'px solid #C98A5E;border-radius:50%;z-index:2147483646;pointer-events:none;animation:__ring 350ms ease-out forwards}'
     + ' @keyframes __ring{from{transform:var(--p) scale(.35);opacity:.95}to{transform:var(--p) scale(1.35);opacity:0}}';
   function install() {

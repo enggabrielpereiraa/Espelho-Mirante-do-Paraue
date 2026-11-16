@@ -3,13 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}[hidden]{display:none!important}</style>
-</head>
-<body>
-<title>Espelho Mirante do Parque</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<title>Espelho 3D · Mirante do Parque</title>
+<meta name="description" content="Espelho de vendas em 3D e gestão do condomínio do Residencial Mirante do Parque: disponibilidade, propostas, portaria, chamados e financeiro no mesmo prédio.">
+<meta name="theme-color" content="#0F1012">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Espelho 3D · Mirante do Parque">
+<meta property="og:description" content="Vendas e condomínio no mesmo prédio: espelho de vendas em 3D, propostas, portaria, chamados e financeiro.">
+<meta property="og:image" content="og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1012'/%3E%3Cpath d='M9 24V10h6v14M17 24V6h6v18' fill='none' stroke='%23C98A5E' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}[hidden]{display:none!important}</style>
 <style>
 /* Layout: menu fixo à esquerda + área de trabalho; no Espelho 3D o canvas ocupa tudo e o painel fica à direita (no celular vira gaveta inferior). */
 :root {
@@ -329,7 +334,7 @@ button.lk:hover { border-color: var(--fg); }
 .cota.constr { background: transparent; color: var(--fg3); border-color: var(--line); }
 
 /* ---------- overlays ---------- */
-.scrim { position: fixed; inset: 0; background: rgba(6, 7, 8, .62); z-index: 40; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(3px); animation: fade 160ms ease-out; }
+.scrim { position: fixed; inset: 0; background: rgba(6, 7, 8, .72); z-index: 40; display: flex; align-items: center; justify-content: center; padding: 20px; animation: fade 160ms ease-out; }
 .scrim.right { justify-content: flex-end; padding: 0; }
 @keyframes fade { from { opacity: 0; } }
 .modal { background: var(--s1); border: 1px solid var(--line2); border-radius: 14px; width: min(560px, 100%); max-height: calc(100% - 20px); overflow-y: auto; box-shadow: 0 24px 60px rgba(0, 0, 0, .45); }
@@ -463,8 +468,10 @@ button.lk:hover { border-color: var(--fg); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 </style>
+</head>
+<body>
 <div id="root"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="vendor/qrcode.min.js" onerror="var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';document.head.appendChild(s)"></script>
 <script type="module">
 /* ================= CONFIG DO CLIENTE ================= */
 const CLIENTE = {
@@ -1878,9 +1885,10 @@ function rota() {
 window.addEventListener('hashchange', rota);
 
 /* ================= 3D ================= */
-const THREE_URL = 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+const THREE_URL = './vendor/three.module.min.js';                                            // cópia local (three 0.160.0)
+const THREE_CDN = 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';   // plano B
 let T = null;
-async function carregarThree() { if (!T) T = await import(THREE_URL); return T; }
+async function carregarThree() { if (!T) { try { T = await import(THREE_URL); } catch (e) { T = await import(THREE_CDN); } } return T; }
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const ehMobile = () => matchMedia('(max-width: 860px)').matches;
 
@@ -2074,7 +2082,7 @@ async function iniciarCena(stage) {
   const ceu = new T.Mesh(new T.SphereGeometry(1000, 32, 16), new T.ShaderMaterial({
     uniforms: ceuU, side: T.BackSide, depthWrite: false,
     vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
-    fragmentShader: 'uniform vec3 cTop; uniform vec3 cHor; uniform vec3 cBot; varying vec3 vP; void main(){ float h = vP.y; vec3 c = h > 0.0 ? mix(cHor, cTop, pow(clamp(h*1.6,0.0,1.0),0.7)) : mix(cHor, cBot, clamp(-h*4.0,0.0,1.0)); gl_FragColor = vec4(c,1.0); #include <tonemapping_fragment>\n#include <colorspace_fragment>\n}',
+    fragmentShader: 'uniform vec3 cTop; uniform vec3 cHor; uniform vec3 cBot; varying vec3 vP; void main(){ float h = vP.y; vec3 c = h > 0.0 ? mix(cHor, cTop, pow(clamp(h*1.6,0.0,1.0),0.7)) : mix(cHor, cBot, clamp(-h*4.0,0.0,1.0)); gl_FragColor = vec4(c,1.0);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}',
   }));
   scene.add(ceu);
   const hemi = new T.HemisphereLight(0xffffff, 0x444444, 1); scene.add(hemi);
