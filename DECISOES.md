@@ -75,3 +75,16 @@ Registro do que foi decidido durante a produção, e por quê. Em ordem de impac
 - **Testes** em `testes/fluxos.test.js` com `node:test` + Playwright (sem dependência nova): 9 testes, ~25 s, com a rede externa bloqueada. Conferem números de verdade (contagens, valor com desconto, código Pix), então mudar os dados fictícios pode exigir ajustar o teste.
 - **Os vídeos em `out/` são de antes desta rodada.** A única diferença visível seria o fundo dos modais um pouco mais escuro (0,72 em vez de 0,62). Não regravei por isso.
 - **Skills** em `.claude/skills/` e `CLAUDE.md` na raiz. A skill `novo-cliente` descreve só o que existe hoje e diz o que falta (tema por cliente, modelo 3D real, fotos).
+
+## 14. Identidade neutra da demo (fase 5 do `PROMPT-MELHORIAS.md`)
+Feita sem material de marca, porque a Gap Automação ainda não tem identidade visual e a demo serve para mostrar funções a vários clientes.
+- **Tema claro como padrão**: papel quente (`#F3F1EC`), cartões brancos, texto grafite. Incorporadora apresenta em sala clara e em projetor, e a combinação anterior (fundo quase preto + cobre) é a assinatura mais comum de interface gerada por IA. O tema escuro continua existindo: `?tema=escuro` no endereço ou `CLIENTE.tema = 'escuro'`.
+- **Destaque azul-tinta (`#24507A`)**: sóbrio e sem disputar com o verde, o amarelo e o vermelho dos status. Para a marca de um cliente basta trocar `--accent` e `--accent-ink` no `:root`.
+- **IBM Plex Sans** no lugar da Manrope; **IBM Plex Mono** só em números e códigos. As fontes ficam em `demo/vendor/fonts/` (WOFF2, só alfabeto latino, 128 KB no total, licença OFL incluída): a demo não depende mais de internet para nada.
+- **Rótulos em caixa normal**, sem fonte mono e sem espaçamento largo (`.lbl`, cabeçalhos de tabela, nome da incorporadora no menu).
+- **Menos enfeite**: saíram os degradês (KPI principal, alertas do app, armários, fotos de encomenda) e o segundo `backdrop-filter`. O KPI principal ganhou só uma barra lateral na cor de destaque.
+- **O que flutua sobre o 3D continua em vidro escuro** (seletor Vendas/Condomínio, luz, legenda, marcadores, visualizador do apartamento): está sobre imagem, e o escuro dá leitura em qualquer luz do prédio. Isso é feito redeclarando as variáveis dentro de `.stage` e `.apto`.
+- **Status com texto próprio**: cada cor tem uma variável de fundo (`--ok-soft`) e uma de texto (`--ok-ink`), com contraste de pelo menos 4,5:1 nos dois temas. O cinza dos rótulos (`--fg3`) foi medido: 4,98:1 sobre o fundo e 5,62:1 sobre os cartões.
+- **Textos**: a maior parte já usava o vocabulário do ofício (valor de tabela, cotas, assembleia, prestação de contas) e ficou como estava. Mudaram só 7 frases com cara de sistema ou de demonstração.
+- **Não mexi**: no prédio 3D (continua procedural), nos dados fictícios e na marca "Vértice Incorporadora" (é o nome de um cliente fictício, não da Gap).
+- **Os vídeos e o story em `out/` ainda mostram o visual antigo.** Regravar leva cerca de 1h30; fica para depois da aprovação do visual novo. Os cards do vídeo (abertura, lower third, card final) também precisam trocar de fonte e de cor para acompanhar.

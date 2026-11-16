@@ -2,7 +2,7 @@
 
 Produto da Gap Automação para incorporadoras e condomínios. O repositório tem duas partes:
 
-- **`demo/`**: o produto. Uma página só (`index.html`), sem build, com Three.js e qrcodejs em `demo/vendor/`. Dados fictícios, estado em `localStorage`, data fixa (04/11/2026, 15:20).
+- **`demo/`**: o produto. Uma página só (`index.html`), sem build, com Three.js, qrcodejs e as fontes (IBM Plex) em `demo/vendor/`. Tema claro por padrão; `?tema=escuro` liga o escuro. A cor de destaque é `--accent` no `:root`. Dados fictícios, estado em `localStorage`, data fixa (04/11/2026, 15:20).
 - **`scripts/`**: o pipeline que grava a demo e gera os vídeos de divulgação (`out/`).
 
 Leia `README.md` (como usar) e `DECISOES.md` (por que cada coisa é como é) antes de mudar algo grande. O plano de melhorias está em `PROMPT-MELHORIAS.md`.

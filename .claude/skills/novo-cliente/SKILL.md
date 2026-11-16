@@ -18,7 +18,7 @@ Tudo fica no objeto `CLIENTE`, no topo do `<script>` de `demo/index.html`: `inco
 5. Tire um print de cada tela e mostre.
 
 ## O que ainda não existe
-- **Tema por cliente** (logo, cor, fonte): as cores estão em variáveis CSS no `:root`, mas não derivam do `CLIENTE`. Trocar `--accent` já muda o destaque; logo e fonte exigem editar o HTML.
+- **Tema por cliente completo**: a cor de destaque já é uma variável só (`--accent` e `--accent-ink` no `:root` de `demo/index.html`; confira contraste de 4,5:1 do texto sobre ela). Logo e fonte ainda exigem editar o HTML (`.brand` no menu e os `@font-face` no topo).
 - **Prédio real**: o 3D é procedural (caixas). Não há carregamento de `.glb`.
 - **Fotos e plantas reais**: as plantas são desenhadas por código.
 

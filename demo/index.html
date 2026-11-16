@@ -5,50 +5,68 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Espelho 3D · Mirante do Parque</title>
 <meta name="description" content="Espelho de vendas em 3D e gestão do condomínio do Residencial Mirante do Parque: disponibilidade, propostas, portaria, chamados e financeiro no mesmo prédio.">
-<meta name="theme-color" content="#0F1012">
+<meta name="theme-color" content="#F3F1EC">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Espelho 3D · Mirante do Parque">
 <meta property="og:description" content="Vendas e condomínio no mesmo prédio: espelho de vendas em 3D, propostas, portaria, chamados e financeiro.">
 <meta property="og:image" content="og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1012'/%3E%3Cpath d='M9 24V10h6v14M17 24V6h6v18' fill='none' stroke='%23C98A5E' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap">
 <style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}[hidden]{display:none!important}</style>
 <style>
+@font-face{font-family:'IBM Plex Sans';font-weight:400;font-style:normal;font-display:swap;src:url(vendor/fonts/IBMPlexSans-Regular.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:500;font-style:normal;font-display:swap;src:url(vendor/fonts/IBMPlexSans-Medium.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;font-style:normal;font-display:swap;src:url(vendor/fonts/IBMPlexSans-SemiBold.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:700;font-style:normal;font-display:swap;src:url(vendor/fonts/IBMPlexSans-Bold.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;font-style:normal;font-display:swap;src:url(vendor/fonts/IBMPlexMono-Regular.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-style:normal;font-display:swap;src:url(vendor/fonts/IBMPlexMono-Medium.woff2) format('woff2')}
 /* Layout: menu fixo à esquerda + área de trabalho; no Espelho 3D o canvas ocupa tudo e o painel fica à direita (no celular vira gaveta inferior). */
 :root {
-  color-scheme: dark;
-  --bg: #0F1012;
-  --s1: #141619;
-  --s2: #1A1D21;
-  --s3: #22262B;
-  --s4: #2B3036;
-  --line: rgba(236, 232, 224, 0.075);
-  --line2: rgba(236, 232, 224, 0.14);
-  --fg: #ECE9E3;
-  --fg2: #A7ABB1;
-  --fg3: #6D737A;
-  --accent: #C98A5E;
-  --accent-soft: rgba(201, 138, 94, 0.14);
-  --accent-ink: #1B120B;
-  --ok: #6BB08B;
-  --ok-soft: rgba(107, 176, 139, 0.14);
-  --warn: #DDB453;
-  --warn-soft: rgba(221, 180, 83, 0.14);
-  --bad: #DC6B61;
-  --bad-soft: rgba(220, 107, 97, 0.14);
-  --info: #86A6C6;
-  --info-soft: rgba(134, 166, 198, 0.14);
+  /* Tema claro (padrão). Para a marca de um cliente, basta trocar --accent e --accent-ink.
+     Tema escuro: acrescente ?tema=escuro ao endereço ou defina CLIENTE.tema = 'escuro'. */
+  color-scheme: light;
+  --bg: #F3F1EC; --s1: #FFFFFF; --s2: #F8F6F2; --s3: #EDEAE4; --s4: #DFDBD3;
+  --line: rgba(24, 28, 34, 0.09); --line2: rgba(24, 28, 34, 0.17);
+  --fg: #1B1E22; --fg2: #4A5058; --fg3: #626870;
+  --accent: #24507A; --accent-soft: rgba(36, 80, 122, 0.10); --accent-ink: #FFFFFF;
+  --ok: #2F7D58; --ok-soft: rgba(47, 125, 88, 0.13); --ok-ink: #1F5E41;
+  --warn: #B4801A; --warn-soft: rgba(196, 142, 30, 0.18); --warn-ink: #76520A;
+  --bad: #BF463C; --bad-soft: rgba(191, 70, 60, 0.12); --bad-ink: #93332B;
+  --info: #3B6FA6; --info-soft: rgba(59, 111, 166, 0.12); --info-ink: #2A5482;
+  --wa: #1F7A4D; --glass: var(--s3); --sombra: rgba(24, 28, 34, .18);
   --paper: #F1EEE8;
   --paper-ink: #2A2D31;
-  --ui: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  --r-card: 12px;
-  --r-btn: 8px;
+  --ui: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  --r-card: 10px;
+  --r-btn: 7px;
   --nav-w: 228px;
   --panel-w: 372px;
   --t: 180ms cubic-bezier(.2, .7, .2, 1);
+}
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --bg: #0F1012; --s1: #141619; --s2: #1A1D21; --s3: #22262B; --s4: #2B3036;
+  --line: rgba(236, 232, 224, 0.075); --line2: rgba(236, 232, 224, 0.14);
+  --fg: #ECE9E3; --fg2: #A7ABB1; --fg3: #6D737A;
+  --ok: #6BB08B; --ok-soft: rgba(107, 176, 139, 0.16); --ok-ink: #A9DDBF;
+  --warn: #DDB453; --warn-soft: rgba(221, 180, 83, 0.16); --warn-ink: #F0D08A;
+  --bad: #DC6B61; --bad-soft: rgba(220, 107, 97, 0.16); --bad-ink: #F2A79F;
+  --info: #86A6C6; --info-soft: rgba(134, 166, 198, 0.16); --info-ink: #BFD6E8;
+  --wa: #8FD3A8; --glass: rgba(15, 16, 18, .72); --sombra: rgba(0, 0, 0, .45);
+  --accent: #C98A5E; --accent-soft: rgba(201, 138, 94, 0.14); --accent-ink: #1B120B;
+}
+/* O que flutua sobre o 3D (controles, legenda, marcadores) e o visualizador do apartamento ficam sempre em vidro escuro: estão sobre imagem. */
+.stage, .apto {
+  color-scheme: dark; color: var(--fg);
+  --bg: #0F1012; --s1: #141619; --s2: #1A1D21; --s3: #22262B; --s4: #2B3036;
+  --line: rgba(236, 232, 224, 0.075); --line2: rgba(236, 232, 224, 0.14);
+  --fg: #ECE9E3; --fg2: #A7ABB1; --fg3: #6D737A;
+  --ok: #6BB08B; --ok-soft: rgba(107, 176, 139, 0.16); --ok-ink: #A9DDBF;
+  --warn: #DDB453; --warn-soft: rgba(221, 180, 83, 0.16); --warn-ink: #F0D08A;
+  --bad: #DC6B61; --bad-soft: rgba(220, 107, 97, 0.16); --bad-ink: #F2A79F;
+  --info: #86A6C6; --info-soft: rgba(134, 166, 198, 0.16); --info-ink: #BFD6E8;
+  --wa: #8FD3A8; --glass: rgba(15, 16, 18, .72); --sombra: rgba(0, 0, 0, .45);
 }
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
@@ -62,7 +80,7 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
 .num, .mono { font-variant-numeric: tabular-nums; }
 .mono { font-family: var(--mono); }
-.lbl { font-family: var(--mono); font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--fg3); font-weight: 500; }
+.lbl { font-size: 12px; color: var(--fg3); font-weight: 500; }
 .muted { color: var(--fg2); }
 .dim { color: var(--fg3); }
 .ic { width: 16px; height: 16px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
@@ -79,7 +97,7 @@ a { color: inherit; }
 .brand-mark { width: 26px; height: 26px; border-radius: 7px; background: var(--accent); position: relative; flex: none; }
 .brand-mark::after { content: ""; position: absolute; inset: 7px 7px 7px 7px; border: 2px solid var(--accent-ink); border-top: 0; border-right: 0; transform: rotate(-45deg) translate(1px, -1px); }
 .brand-txt { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
-.brand-txt b { font-family: var(--mono); font-size: 12.5px; letter-spacing: .16em; }
+.brand-txt b { font-size: 14px; font-weight: 700; letter-spacing: 0; }
 .brand-txt span { font-size: 11.5px; color: var(--fg3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bell { margin-left: auto; position: relative; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--line); background: var(--s2); display: grid; place-items: center; color: var(--fg2); }
 .bell:hover { color: var(--fg); border-color: var(--line2); }
@@ -120,14 +138,14 @@ main { position: relative; min-width: 0; min-height: 0; height: 100%; }
   border: 1px solid var(--line2); background: var(--s2); color: var(--fg); font-weight: 600; font-size: 13px; white-space: nowrap;
   transition: background var(--t), border-color var(--t), transform 90ms; text-decoration: none;
 }
-.btn:hover { background: var(--s3); border-color: rgba(236, 232, 224, .22); }
+.btn:hover { background: var(--s3); border-color: var(--fg3); }
 .btn:active { transform: translateY(1px); }
 .btn.pri { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-.btn.pri:hover { background: #D39770; }
+.btn.pri:hover { filter: brightness(1.12); }
 .btn.ghost { background: transparent; border-color: transparent; color: var(--fg2); }
 .btn.ghost:hover { color: var(--fg); background: var(--s2); }
 .btn.sm { height: 28px; padding: 0 10px; font-size: 12px; gap: 5px; }
-.btn.wa { color: #8FD3A8; }
+.btn.wa { color: var(--wa); }
 .btn.okb { color: var(--ok); }
 .btn[disabled] { opacity: .45; pointer-events: none; }
 .icbtn { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line); background: var(--s2); color: var(--fg2); display: grid; place-items: center; padding: 0; }
@@ -142,7 +160,7 @@ main { position: relative; min-width: 0; min-height: 0; height: 100%; }
 .pill.info { background: var(--info-soft); color: var(--info); }
 .pill.acc { background: var(--accent-soft); color: var(--accent); }
 .badge { min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--bad); color: #fff; font-size: 10.5px; font-weight: 700; display: inline-grid; place-items: center; font-family: var(--mono); }
-.seg { display: inline-flex; padding: 3px; gap: 2px; border-radius: 10px; background: rgba(15, 16, 18, .72); border: 1px solid var(--line2); backdrop-filter: blur(10px); }
+.seg { display: inline-flex; padding: 3px; gap: 2px; border-radius: 10px; background: var(--glass); border: 1px solid var(--line2); }
 .seg button { border: 0; background: transparent; color: var(--fg2); height: 30px; padding: 0 12px; border-radius: 7px; font-weight: 600; font-size: 12.5px; display: inline-flex; align-items: center; gap: 7px; }
 .seg button:hover { color: var(--fg); }
 .seg button.on { background: var(--fg); color: var(--bg); }
@@ -163,11 +181,12 @@ textarea.inp { height: auto; padding: 9px 11px; resize: vertical; min-height: 84
 .avatar.sm { width: 26px; height: 26px; font-size: 10.5px; }
 .row { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .row.wrap { flex-wrap: wrap; }
+.row.wrap > .h2.grow { min-width: max-content; }
 .grow { flex: 1; min-width: 0; }
 .ell { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tbl-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--s1); }
 table.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
-.tbl th { text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--fg3); font-weight: 500; padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tbl th { text-align: left; font-size: 12px; color: var(--fg3); font-weight: 500; padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 .tbl th button { background: none; border: 0; padding: 0; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; display: inline-flex; gap: 4px; align-items: center; }
 .tbl th button:hover { color: var(--fg); }
 .tbl td { padding: 11px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -188,7 +207,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
 .stage-tools .icbtn { background: rgba(15, 16, 18, .72); backdrop-filter: blur(10px); border-color: var(--line2); }
 .stage-tools .icbtn.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .stage-tools hr { border: 0; height: 1px; background: var(--line2); margin: 2px 4px; }
-.stage-hint { position: absolute; left: 16px; bottom: 14px; font-family: var(--mono); font-size: 11px; color: rgba(236, 233, 227, .62); z-index: 3; pointer-events: none; background: rgba(15, 16, 18, .5); padding: 5px 9px; border-radius: 6px; }
+.stage-hint { position: absolute; left: 16px; bottom: 14px; font-size: 12px; color: rgba(236, 233, 227, .62); z-index: 3; pointer-events: none; background: rgba(15, 16, 18, .5); padding: 5px 9px; border-radius: 6px; }
 .stage-legend { position: absolute; right: 16px; bottom: 14px; display: flex; gap: 12px; z-index: 3; font-size: 11.5px; color: var(--fg2); background: rgba(15, 16, 18, .62); padding: 6px 10px; border-radius: 8px; backdrop-filter: blur(8px); }
 .stage-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .stage-legend i { width: 9px; height: 9px; border-radius: 3px; }
@@ -223,9 +242,9 @@ button.stat:hover { border-color: var(--line2); background: var(--s3); }
 .mirror .fl { font-family: var(--mono); font-size: 10.5px; color: var(--fg3); display: grid; place-items: center; }
 .mirror button { height: 28px; border-radius: 6px; border: 1px solid transparent; font-family: var(--mono); font-size: 11.5px; font-weight: 600; padding: 0; position: relative; transition: transform 90ms, border-color var(--t), opacity var(--t); }
 .mirror button:hover, .mirror button.hl { border-color: var(--fg); transform: translateY(-1px); }
-.mirror button.disponivel { background: rgba(107, 176, 139, .22); color: #A9DDBF; }
-.mirror button.reservada { background: rgba(221, 180, 83, .24); color: #F0D08A; }
-.mirror button.vendida { background: rgba(220, 107, 97, .22); color: #F2A79F; }
+.mirror button.disponivel { background: var(--ok-soft); color: var(--ok-ink); }
+.mirror button.reservada { background: var(--warn-soft); color: var(--warn-ink); }
+.mirror button.vendida { background: var(--bad-soft); color: var(--bad-ink); }
 .mirror button.off { opacity: .28; }
 .mirror button.neutro { background: var(--s2); color: var(--fg3); }
 .mirror button.tem { background: var(--s3); color: var(--fg); }
@@ -265,7 +284,7 @@ button.stat:hover { border-color: var(--line2); background: var(--s3); }
 .kpis { display: grid; grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr)); gap: 14px; }
 .kpi { display: flex; flex-direction: column; gap: 6px; }
 .kpi .v { font-size: 28px; font-weight: 600; letter-spacing: -.03em; font-variant-numeric: tabular-nums; line-height: 1.1; }
-.kpi.hero { background: linear-gradient(135deg, rgba(201, 138, 94, .10), rgba(201, 138, 94, 0) 55%), var(--s1); }
+.kpi.hero { background: var(--s1); box-shadow: inset 3px 0 0 var(--accent); }
 .kpi.hero .v { font-size: 42px; }
 .kpi .s { color: var(--fg2); font-size: 12.5px; }
 .two { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 14px; }
@@ -280,7 +299,7 @@ button.stat:hover { border-color: var(--line2); background: var(--s3); }
 
 /* ---------- CRM ---------- */
 .funnelbar { display: flex; height: 38px; border-radius: 10px; overflow: hidden; gap: 2px; }
-.funnelbar div { display: flex; align-items: center; padding: 0 12px; font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; min-width: 0; color: var(--fg); }
+.funnelbar div { display: flex; align-items: center; padding: 0 12px; font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; min-width: 0; color: #FFFFFF; }
 .kanban { display: grid; grid-template-columns: repeat(5, minmax(220px, 1fr)); gap: 12px; overflow-x: auto; padding-bottom: 6px; }
 .col { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-card); padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 160px; transition: border-color var(--t), background var(--t); }
 .col.drop { border-color: var(--accent); background: var(--accent-soft); }
@@ -292,19 +311,19 @@ button.stat:hover { border-color: var(--line2); background: var(--s3); }
 
 /* ---------- portaria ---------- */
 .lockers-wrap { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 14px; }
-.lockers { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 5px; background: #0B0C0E; padding: 12px; border-radius: 10px; border: 1px solid var(--line); }
-.lk { aspect-ratio: 3 / 4; max-width: 100%; border-radius: 5px; border: 1px solid rgba(255, 255, 255, .08); background: linear-gradient(180deg, #2A2E33, #22262A); font-family: var(--mono); font-size: 10px; color: var(--fg3); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; position: relative; padding-top: 0; }
-.lk::before { content: ""; position: absolute; top: 6px; left: 50%; width: 30%; height: 2px; border-radius: 2px; background: rgba(255, 255, 255, .14); transform: translateX(-50%); }
-.lk.oc { background: linear-gradient(180deg, #2F4A5E, #263C4D); color: #BFD6E8; border-color: rgba(134, 166, 198, .45); }
-.lk.par { background: linear-gradient(180deg, #5A4723, #493A1D); color: #F0D08A; border-color: rgba(221, 180, 83, .55); }
+.lockers { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 5px; background: var(--s3); padding: 12px; border-radius: 10px; border: 1px solid var(--line); }
+.lk { aspect-ratio: 3 / 4; max-width: 100%; border-radius: 5px; border: 1px solid var(--line2); background: var(--s1); font-family: var(--mono); font-size: 10px; color: var(--fg3); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; position: relative; padding-top: 0; }
+.lk::before { content: ""; position: absolute; top: 6px; left: 50%; width: 30%; height: 2px; border-radius: 2px; background: var(--line2); transform: translateX(-50%); }
+.lk.oc { background: var(--info-soft); color: var(--info-ink); border-color: var(--info); }
+.lk.par { background: var(--warn-soft); color: var(--warn-ink); border-color: var(--warn); }
 button.lk { cursor: pointer; }
 button.lk:hover { border-color: var(--fg); }
 .enc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 12px; }
 .enc { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; display: flex; flex-direction: column; transition: border-color var(--t), transform var(--t); }
 .enc:hover { border-color: var(--line2); transform: translateY(-1px); }
-.enc-ph { position: relative; height: 128px; background: linear-gradient(180deg, #3A3D41, #2B2E32); border: 0; padding: 0; width: 100%; display: block; cursor: pointer; }
+.enc-ph { position: relative; height: 128px; background: var(--s3); border: 0; padding: 0; width: 100%; display: block; cursor: pointer; }
 .enc-ph svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.enc-ph .tag { position: absolute; top: 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; background: rgba(12, 13, 15, .78); padding: 3px 7px; border-radius: 6px; color: var(--fg); }
+.enc-ph .tag { position: absolute; top: 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; background: rgba(20, 22, 26, .8); padding: 3px 7px; border-radius: 6px; color: #F3F1EC; }
 .enc-b { padding: 11px 12px 12px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .enc-b .acts { display: flex; gap: 6px; margin-top: auto; padding-top: 4px; }
 .enc-b .acts .btn { flex: 1; }
@@ -337,7 +356,7 @@ button.lk:hover { border-color: var(--fg); }
 .scrim { position: fixed; inset: 0; background: rgba(6, 7, 8, .72); z-index: 40; display: flex; align-items: center; justify-content: center; padding: 20px; animation: fade 160ms ease-out; }
 .scrim.right { justify-content: flex-end; padding: 0; }
 @keyframes fade { from { opacity: 0; } }
-.modal { background: var(--s1); border: 1px solid var(--line2); border-radius: 14px; width: min(560px, 100%); max-height: calc(100% - 20px); overflow-y: auto; box-shadow: 0 24px 60px rgba(0, 0, 0, .45); }
+.modal { background: var(--s1); border: 1px solid var(--line2); border-radius: 14px; width: min(560px, 100%); max-height: calc(100% - 20px); overflow-y: auto; box-shadow: 0 24px 60px var(--sombra); }
 .modal.wide { width: min(760px, 100%); }
 .modal-h { display: flex; align-items: center; gap: 10px; padding: 16px 18px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--s1); z-index: 1; }
 .modal-h h3 { margin: 0; font-size: 16px; font-weight: 600; flex: 1; }
@@ -345,10 +364,10 @@ button.lk:hover { border-color: var(--fg); }
 .modal-f { padding: 14px 18px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
 .drawer { background: var(--s1); border-left: 1px solid var(--line2); width: min(400px, 100%); height: 100%; overflow-y: auto; animation: slide 200ms cubic-bezier(.2, .7, .2, 1); }
 @keyframes slide { from { transform: translateX(30px); opacity: .4; } }
-.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 60; background: var(--fg); color: var(--bg); border-radius: 10px; padding: 10px 14px; font-weight: 600; font-size: 13px; display: flex; gap: 14px; align-items: center; box-shadow: 0 12px 30px rgba(0, 0, 0, .4); animation: up 200ms ease-out; width: max-content; max-width: calc(100% - 32px); }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 60; background: var(--fg); color: var(--bg); border-radius: 10px; padding: 10px 14px; font-weight: 600; font-size: 13px; display: flex; gap: 14px; align-items: center; box-shadow: 0 12px 30px var(--sombra); animation: up 200ms ease-out; width: max-content; max-width: calc(100% - 32px); }
 .toast button { background: none; border: 0; color: var(--accent-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; padding: 0; }
 @keyframes up { from { transform: translate(-50%, 10px); opacity: 0; } }
-.pop { position: fixed; z-index: 45; width: 320px; background: var(--s1); border: 1px solid var(--line2); border-radius: 12px; box-shadow: 0 18px 40px rgba(0, 0, 0, .45); padding: 8px; }
+.pop { position: fixed; z-index: 45; width: 320px; background: var(--s1); border: 1px solid var(--line2); border-radius: 12px; box-shadow: 0 18px 40px var(--sombra); padding: 8px; }
 .pop a { display: flex; gap: 10px; align-items: center; padding: 9px 10px; border-radius: 8px; text-decoration: none; font-size: 13px; }
 .pop a:hover { background: var(--s2); }
 .pop a b { margin-left: auto; font-family: var(--mono); }
@@ -372,8 +391,8 @@ button.lk:hover { border-color: var(--fg); }
 /* ---------- app do morador ---------- */
 .mor-wrap { display: flex; gap: 28px; align-items: flex-start; justify-content: center; flex-wrap: wrap; }
 .mor-side { max-width: 300px; display: flex; flex-direction: column; gap: 12px; padding-top: 10px; }
-.phone { width: 390px; max-width: 100%; height: 812px; max-height: calc(100vh - 90px); border-radius: 46px; background: #050506; padding: 11px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .1), 0 30px 70px rgba(0, 0, 0, .5); flex: none; }
-.screen { position: relative; height: 100%; border-radius: 36px; overflow: hidden; background: #111215; display: flex; flex-direction: column; }
+.phone { width: 390px; max-width: 100%; height: 812px; max-height: calc(100vh - 90px); border-radius: 46px; background: #16181B; padding: 11px; box-shadow: 0 30px 70px var(--sombra); flex: none; }
+.screen { position: relative; height: 100%; border-radius: 36px; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; }
 .notch { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 110px; height: 30px; border-radius: 20px; background: #000; z-index: 3; }
 .sbar { height: 48px; flex: none; display: flex; justify-content: space-between; align-items: center; padding: 6px 28px 0; font-size: 13px; font-weight: 700; }
 .sbar span:last-child { display: flex; gap: 5px; align-items: center; }
@@ -382,8 +401,8 @@ button.lk:hover { border-color: var(--fg); }
 .mhead .avatar { width: 40px; height: 40px; background: var(--accent); color: var(--accent-ink); }
 .hello { font-size: 25px; font-weight: 600; letter-spacing: -.025em; margin: 4px 0 0; }
 .mcard { background: var(--s2); border: 1px solid var(--line); border-radius: 16px; padding: 13px; display: flex; flex-direction: column; gap: 9px; }
-.mcard.alert { background: linear-gradient(160deg, rgba(220, 107, 97, .2), rgba(220, 107, 97, .06)); border-color: rgba(220, 107, 97, .3); cursor: pointer; text-align: left; }
-.mcard.alert.warn { background: linear-gradient(160deg, rgba(221, 180, 83, .18), rgba(221, 180, 83, .05)); border-color: rgba(221, 180, 83, .28); }
+.mcard.alert { background: var(--bad-soft); border-color: var(--bad); cursor: pointer; text-align: left; }
+.mcard.alert.warn { background: var(--warn-soft); border-color: var(--warn); }
 .mods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .mod { background: var(--s2); border: 1px solid var(--line); border-radius: 14px; padding: 12px 6px 10px; display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 600; color: var(--fg2); position: relative; }
 .mod:hover { border-color: var(--line2); color: var(--fg); }
@@ -392,11 +411,11 @@ button.lk:hover { border-color: var(--fg); }
 .mtop { display: flex; align-items: center; gap: 8px; padding: 2px 0 4px; }
 .mtop h4 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -.02em; }
 .thumbs { display: flex; gap: 8px; }
-.thumbs > div { flex: 1; border-radius: 10px; overflow: hidden; background: linear-gradient(180deg, #3A3D41, #2B2E32); height: 74px; position: relative; }
+.thumbs > div { flex: 1; border-radius: 10px; overflow: hidden; background: var(--s3); height: 74px; position: relative; }
 .thumbs svg { width: 100%; height: 100%; }
-.thumbs span { position: absolute; left: 6px; bottom: 5px; font-size: 10px; font-weight: 700; background: rgba(12, 13, 15, .78); padding: 1px 5px; border-radius: 4px; }
+.thumbs span { position: absolute; left: 6px; bottom: 5px; font-size: 10px; font-weight: 700; background: rgba(20, 22, 26, .8); color: #F3F1EC; padding: 1px 5px; border-radius: 4px; }
 .homebar { height: 22px; flex: none; display: grid; place-items: center; }
-.homebar i { width: 120px; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .6); }
+.homebar i { width: 120px; height: 4px; border-radius: 4px; background: var(--fg3); }
 
 /* ---------- celular ---------- */
 .mnav { display: none; }
@@ -415,14 +434,14 @@ button.lk:hover { border-color: var(--fg); }
   .mnav {
     display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; height: calc(62px + env(safe-area-inset-bottom, 0px));
     padding: 6px max(8px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(8px, env(safe-area-inset-left, 0px));
-    background: rgba(20, 22, 25, .96); border-top: 1px solid var(--line2); backdrop-filter: blur(12px);
+    background: var(--s1); border-top: 1px solid var(--line2);
   }
   .mnav a, .mnav button { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 10.5px; font-weight: 600; color: var(--fg3); text-decoration: none; background: none; border: 0; position: relative; }
   .mnav .on { color: var(--fg); }
   .mnav .on .ic { color: var(--accent); }
   .mnav .badge { position: absolute; top: 0; left: calc(50% + 6px); }
   .espelho { grid-template-columns: minmax(0, 1fr); }
-  .panel { position: absolute; left: 0; right: 0; bottom: 0; height: 128px; z-index: 6; border-left: 0; border-top: 1px solid var(--line2); border-radius: 16px 16px 0 0; transition: height 240ms cubic-bezier(.2, .7, .2, 1); box-shadow: 0 -14px 40px rgba(0, 0, 0, .4); }
+  .panel { position: absolute; left: 0; right: 0; bottom: 0; height: 128px; z-index: 6; border-left: 0; border-top: 1px solid var(--line2); border-radius: 16px 16px 0 0; transition: height 240ms cubic-bezier(.2, .7, .2, 1); box-shadow: 0 -14px 40px var(--sombra); }
   .panel.open { height: 64%; }
   .panel-handle { display: flex; justify-content: center; align-items: center; height: 22px; flex: none; border: 0; background: none; width: 100%; touch-action: none; }
   .panel-handle i { width: 40px; height: 4px; border-radius: 4px; background: var(--fg3); }
@@ -451,7 +470,7 @@ button.lk:hover { border-color: var(--fg); }
   table.tbl.cards, table.tbl.cards tbody, table.tbl.cards tr, table.tbl.cards td { display: block; width: 100%; }
   table.tbl.cards tr { padding: 10px 14px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; }
   table.tbl.cards td { border: 0; padding: 2px 0; white-space: normal; }
-  table.tbl.cards td[data-l]::before { content: attr(data-l) " "; color: var(--fg3); font-size: 11px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+  table.tbl.cards td[data-l]::before { content: attr(data-l) " "; color: var(--fg3); font-size: 11.5px; }
   table.tbl.cards td.r { text-align: right; }
   .apto { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) 190px; }
   .apto-side { border-left: 0; border-top: 1px solid var(--line); }
@@ -476,7 +495,7 @@ button.lk:hover { border-color: var(--fg); }
 /* ================= CONFIG DO CLIENTE ================= */
 const CLIENTE = {
   incorporadora: 'Vértice Incorporadora',
-  sigla: 'VÉRTICE',
+  sigla: 'Vértice',
   empreendimento: 'Residencial Mirante do Parque',
   nomeCurto: 'Mirante do Parque',
   local: 'São Paulo · Vila Mariana',
@@ -490,6 +509,7 @@ const CLIENTE = {
   whatsappPortaria: '5511900000000',
 };
 const HOJE = new Date(CLIENTE.hoje);
+{ const t = new URLSearchParams(location.search).get('tema') || CLIENTE.tema; if (t === 'escuro') document.documentElement.dataset.tema = 'escuro'; }
 const H = 3600e3, D = 24 * H;
 const TZ = 'America/Sao_Paulo';
 
@@ -1087,7 +1107,7 @@ function ilustra(tipo, seed = 1) {
     <rect x="${x + w * 0.42}" y="${y}" width="${w * 0.16}" height="${h * 0.42}" fill="#E2CDA0" opacity=".8"/>
     <rect x="${x + w * 0.1}" y="${y + h * 0.5}" width="${w * 0.36}" height="${h * 0.34}" rx="1.5" fill="#fff"/>
     <path d="M${x + w * 0.13} ${y + h * 0.62}h${w * 0.28}M${x + w * 0.13} ${y + h * 0.72}h${w * 0.2}" stroke="#555" stroke-width="2"/>
-    ${tipo === 'caixa grande' ? `<text x="${x + w * 0.62}" y="${y + h * 0.78}" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#7A2B22">FRÁGIL</text>` : ''}
+    ${tipo === 'caixa grande' ? `<text x="${x + w * 0.62}" y="${y + h * 0.78}" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="700" fill="#7A2B22">FRÁGIL</text>` : ''}
   </svg>`;
 }
 
@@ -1109,10 +1129,10 @@ function plantaSVG(tipo, { labels = true } = {}) {
   if (labels) p.comodos.forEach(c => {
     const fs = c.w < 1.75 || c.h < 1.3 ? 0.22 : 0.3;
     const cx = c.x + c.w / 2, cy = c.y + c.h / 2;
-    s += `<text x="${cx}" y="${cy - 0.02}" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="700" font-size="${fs}" fill="#24272B">${esc(c.n)}</text><text x="${cx}" y="${cy + fs + 0.02}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="${fs * 0.82}" fill="#5B6067">${fmt.m2(areaComodo(c))}</text>`;
+    s += `<text x="${cx}" y="${cy - 0.02}" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="${fs}" fill="#24272B">${esc(c.n)}</text><text x="${cx}" y="${cy + fs + 0.02}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="${fs * 0.82}" fill="#5B6067">${fmt.m2(areaComodo(c))}</text>`;
   });
   const by = p.D + 0.55;
-  s += `<g font-family="JetBrains Mono, monospace" font-size=".22" fill="#5B6067"><rect x="0" y="${by - 0.06}" width="1" height=".12" fill="#2A2D31"/><rect x="1" y="${by - 0.06}" width="1" height=".12" fill="#9A9EA3"/><text x="0" y="${by + 0.36}">0</text><text x="0.92" y="${by + 0.36}">1</text><text x="1.92" y="${by + 0.36}">2 m</text><text x="${p.W}" y="${by + 0.1}" text-anchor="end">Área útil ${fmt.m2(areaUtil(p))} · privativa ${fmt.m2(p.privativa)}</text></g>`;
+  s += `<g font-family="IBM Plex Mono, monospace" font-size=".22" fill="#5B6067"><rect x="0" y="${by - 0.06}" width="1" height=".12" fill="#2A2D31"/><rect x="1" y="${by - 0.06}" width="1" height=".12" fill="#9A9EA3"/><text x="0" y="${by + 0.36}">0</text><text x="0.92" y="${by + 0.36}">1</text><text x="1.92" y="${by + 0.36}">2 m</text><text x="${p.W}" y="${by + 0.1}" text-anchor="end">Área útil ${fmt.m2(areaUtil(p))} · privativa ${fmt.m2(p.privativa)}</text></g>`;
   return s + '</svg>';
 }
 
@@ -1212,7 +1232,7 @@ function painelEspelho() {
       </div>
       <div class="sect"><div class="sect-h"><span class="lbl">Espelho de vendas</span></div><div class="mirror">${linhas.join('')}</div>
         <div class="legend"><span><i style="background:var(--ok)"></i>Disponível ${disp}</span><span><i style="background:var(--warn)"></i>Reservado ${res}</span><span><i style="background:var(--bad)"></i>Vendido ${vend}</span></div></div>
-      <div class="p-sub">Clique em um apartamento no prédio ou no espelho para ver os detalhes.</div>`;
+      <div class="p-sub">Escolha uma unidade no prédio ou no espelho para ver valor de tabela, planta e condições.</div>`;
   }
   const inad = sel.inadimplentes(S).length, rh = sel.reservasHoje(S);
   const nomeTab = { encomendas: 'Encomendas', chamados: 'Chamados abertos', financeiro: 'Cotas em atraso' }[U.ctab];
@@ -1224,7 +1244,7 @@ function painelEspelho() {
       <button class="stat" data-act="go" data-to="reservas"><span class="lbl">Reservas hoje</span><span class="v">${rh.length}</span><span class="s">${rh.length ? esc(rh[0].area) + ' ' + fmt.hora(rh[0].inicio) : 'nenhuma'}</span></button>
     </div>
     <div class="sect"><div class="sect-h"><span class="lbl">${nomeTab} por apartamento</span></div><div class="mirror">${linhas.join('')}</div>
-      <div class="p-sub">Toque em um apartamento com morador para abrir a ficha.</div></div>`;
+      <div class="p-sub">Escolha um apartamento com morador para abrir a ficha.</div></div>`;
 }
 
 /* ================= TELAS ================= */
@@ -1239,14 +1259,14 @@ function telaGeral() {
   let ch = `<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Vendas por mês">`;
   for (let i = 0; i <= max; i += 1) {
     const y = t + (Hh - t - b) * (1 - i / max);
-    ch += `<line x1="${l}" x2="${W - r}" y1="${y}" y2="${y}" stroke="rgba(236,232,224,${i === 0 ? .18 : .06})"/><text x="${l - 10}" y="${y + 4}" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--fg3)">${i}</text>`;
+    ch += `<line x1="${l}" x2="${W - r}" y1="${y}" y2="${y}" stroke="${i === 0 ? 'var(--line2)' : 'var(--line)'}"/><text x="${l - 10}" y="${y + 4}" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--fg3)">${i}</text>`;
   }
   vm.forEach((v, i) => {
     const h = (Hh - t - b) * v.n / max, x = l + i * cw + cw * 0.22, w = cw * 0.56, y = Hh - b - h;
     const last = i === vm.length - 1;
-    ch += `<rect x="${x}" y="${y}" width="${w}" height="${Math.max(h, 0)}" rx="3" fill="${last ? 'var(--accent)' : '#4A5058'}"/>`;
-    ch += `<text x="${x + w / 2}" y="${y - 7}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600" fill="var(--fg)">${v.n}</text>`;
-    ch += `<text x="${x + w / 2}" y="${Hh - 8}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--fg3)">${fmt.mesCurto(v.mes + '-15T12:00:00-03:00')}</text>`;
+    ch += `<rect x="${x}" y="${y}" width="${w}" height="${Math.max(h, 0)}" rx="3" fill="${last ? 'var(--accent)' : 'var(--s4)'}"/>`;
+    ch += `<text x="${x + w / 2}" y="${y - 7}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="var(--fg)">${v.n}</text>`;
+    ch += `<text x="${x + w / 2}" y="${Hh - 8}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--fg3)">${fmt.mesCurto(v.mes + '-15T12:00:00-03:00')}</text>`;
   });
   ch += '</svg>';
   const fun = sel.funil(S), fmax = Math.max(...fun.map(f => f.n));
@@ -1357,7 +1377,7 @@ function telaPortaria() {
     <div class="lockers-wrap">
       <div class="card"><div class="card-h"><h2>Armários inteligentes</h2><span class="lbl">${sel.armariosOcupados(S)} de ${CLIENTE.armarios} ocupados</span></div>
         <div class="lockers">${lockers}</div>
-        <div class="legend" style="margin-top:10px"><span><i style="background:#3D6280"></i>Ocupado</span><span><i style="background:#8A6E2E"></i>Parado há mais de 3 dias</span><span><i style="background:#2A2E33;border:1px solid var(--line2)"></i>Livre</span>${sala.length ? `<span class="dim">+ ${fmt.plural(sala.length, 'volume', 'volumes')} na sala de encomendas</span>` : ''}</div></div>
+        <div class="legend" style="margin-top:10px"><span><i style="background:var(--info)"></i>Ocupado</span><span><i style="background:var(--warn)"></i>Parado há mais de 3 dias</span><span><i style="background:var(--s1);border:1px solid var(--line2)"></i>Livre</span>${sala.length ? `<span class="dim">+ ${fmt.plural(sala.length, 'volume', 'volumes')} na sala de encomendas</span>` : ''}</div></div>
       <div class="grid" style="grid-template-columns:1fr 1fr;align-content:start">
         <div class="stat"><span class="lbl">Na portaria</span><span class="v">${na.length}</span><span class="s">${fmt.plural(na.filter(e => e.aviso !== 'lido').length, 'sem aviso lido', 'sem aviso lido')}</span></div>
         <div class="stat"><span class="lbl">Retiradas hoje</span><span class="v">${sel.retiradasHoje(S).length}</span><span class="s">desde 00h</span></div>
@@ -1369,7 +1389,7 @@ function telaPortaria() {
       <button class="chip ${U.encf === 'todas' ? 'on' : ''}" data-act="encf" data-v="todas">Todas ${na.length}</button>
       <button class="chip ${U.encf === 'paradas' ? 'on' : ''}" data-act="encf" data-v="paradas">Paradas ${sel.paradas(S).length}</button>
       <button class="chip ${U.encf === 'aviso' ? 'on' : ''}" data-act="encf" data-v="aviso">Aviso não lido ${na.filter(e => e.aviso !== 'lido').length}</button></div></div>
-    <div class="enc-grid">${lista.map(e => cardEnc(e)).join('') || '<div class="empty card">Nenhuma encomenda neste filtro.</div>'}</div>
+    <div class="enc-grid">${lista.map(e => cardEnc(e)).join('') || '<div class="empty card">Nenhuma encomenda com esse filtro.</div>'}</div>
     <div class="two even">
       <div class="card"><div class="card-h"><h2>Visitantes e prestadores de hoje</h2><span class="lbl">${sel.noPredio(S).length} no prédio</span></div>
         ${vis.map(v => `<div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span class="avatar sm">${iniciais(v.nome)}</span><div class="grow"><div class="ell"><b>${esc(v.nome)}</b> <span class="dim">· ${esc(v.tipo)}</span></div><div class="dim mono" style="font-size:11.5px">Apto ${v.unidade} · entrou ${fmt.hora(v.entrada)}${v.saida ? ` · saiu ${fmt.hora(v.saida)}` : ''}</div></div>${v.saida ? '<span class="pill nodot">Saiu</span>' : `<button class="btn sm" data-act="saida" data-id="${v.id}">${ic('out', 'sm')} Registrar saída</button>`}</div>`).join('')}
@@ -1408,7 +1428,7 @@ function telaChamados() {
   const abertos = sel.chamadosAbertos(S);
   const col = (st, nome) => {
     const cs = S.chamados.filter(c => c.status === st).sort((a, b) => new Date(a.prazo) - new Date(b.prazo));
-    return `<div class="col"><div class="col-h"><span>${nome}</span><span class="mono dim">${cs.length}</span></div>${cs.map(c => cardChamado(c)).join('') || '<div class="empty">Nada aqui.</div>'}</div>`;
+    return `<div class="col"><div class="col-h"><span>${nome}</span><span class="mono dim">${cs.length}</span></div>${cs.map(c => cardChamado(c)).join('') || '<div class="empty">Nada por aqui ainda.</div>'}</div>`;
   };
   const emGar = abertos.filter(c => c.garantia).length;
   return `<div class="page-in">${cabecalho('Chamados', `${fmt.plural(abertos.length, 'aberto', 'abertos')} · ${fmt.plural(sel.foraDoPrazo(S).length, 'fora do prazo', 'fora do prazo')} · ${emGar} em garantia da construtora`)}
@@ -1473,7 +1493,7 @@ function modalPix(id) {
   const c = S.cotas.find(x => x.id === id);
   const code = pixCode(c);
   abrirModal(`${modalH('2ª via com Pix')}<div class="modal-b">
-    <div class="row" style="gap:16px;align-items:center;flex-wrap:wrap"><div class="qr" data-qr="${esc(code)}"></div><div class="grow"><div class="lbl">Apto ${c.unidade} · cota de ${fmt.mes(c.vencimento)}</div><div class="price" style="font-size:26px">${fmt.brl2(c.valor)}</div><div class="muted" style="font-size:12.5px">Código de demonstração. Na versão em produção ele vem do banco do condomínio.</div></div></div>
+    <div class="row" style="gap:16px;align-items:center;flex-wrap:wrap"><div class="qr" data-qr="${esc(code)}"></div><div class="grow"><div class="lbl">Apto ${c.unidade} · cota de ${fmt.mes(c.vencimento)}</div><div class="price" style="font-size:26px">${fmt.brl2(c.valor)}</div><div class="muted" style="font-size:12.5px">Código ilustrativo. Em produção, ele vem do banco do condomínio.</div></div></div>
     <label class="field"><span>Pix copia e cola</span><textarea class="inp mono" id="pix-code" readonly rows="3" style="font-size:11.5px">${esc(code)}</textarea></label>
   </div><div class="modal-f"><button class="btn" data-act="copiar" data-alvo="pix-code">${ic('copy', 'sm')} Copiar código</button><button class="btn pri" data-act="fechar">Pronto</button></div>`);
 }
@@ -1520,7 +1540,7 @@ function telaMorador() {
   const mor = Object.values(S.moradores).sort((a, b) => a.unidade.localeCompare(b.unidade));
   if (!S.moradores[U.morador]) U.morador = mor[0].unidade;
   return `<div class="page-in"><div class="mor-wrap">
-    <div class="mor-side"><div><h1 style="font-size:30px;margin:0;letter-spacing:-.02em;font-weight:600">App do morador</h1><p class="muted" style="margin:6px 0 0">O que o morador vê no celular. Tudo o que a portaria e a administração fazem no painel aparece aqui na hora.</p></div>
+    <div class="mor-side"><div><h1 style="font-size:30px;margin:0;letter-spacing:-.02em;font-weight:600">App do morador</h1><p class="muted" style="margin:6px 0 0">É isto que o morador vê no celular. O que a portaria e a administração registram aparece aqui na hora.</p></div>
       <label class="field"><span>Ver como</span><select class="inp" id="mor-sel">${mor.map(m => `<option value="${m.unidade}" ${m.unidade === U.morador ? 'selected' : ''}>${m.unidade} · ${esc(m.nome)}</option>`).join('')}</select></label>
       <a class="btn" href="#espelho">${ic('building', 'sm')} Voltar ao espelho 3D</a></div>
     <div class="phone"><div class="screen"><div class="notch"></div><div class="sbar"><span>${fmt.hora(HOJE)}</span><span>5G <svg width="22" height="11" viewBox="0 0 22 11"><rect x=".5" y=".5" width="18" height="10" rx="2.5" fill="none" stroke="currentColor"/><rect x="2" y="2" width="12" height="7" rx="1.2" fill="currentColor"/><rect x="19.5" y="3.5" width="2" height="4" rx="1" fill="currentColor"/></svg></span></div>
@@ -1578,7 +1598,7 @@ function telaApp() {
       l.forEach((x, i) => {
         const h = (Hh - b - t) * x[k] / max, X = 5 + i * cw + cw * 0.2, w = cw * 0.6, y = Hh - b - h;
         const md = sel.mediaPredio(S, x.mes, k), my = Hh - b - (Hh - b - t) * md / max;
-        svg += `<rect x="${X}" y="${y}" width="${w}" height="${h}" rx="4" fill="${i === l.length - 1 ? (k === 'agua' ? '#6FB3D2' : '#E0A35A') : (k === 'agua' ? '#3D6D86' : '#8A6538')}"/><text x="${X + w / 2}" y="${y - 5}" text-anchor="middle" font-size="10.5" font-family="JetBrains Mono, monospace" fill="var(--fg)">${fmt.n1(x[k])}</text><line x1="${X - 4}" x2="${X + w + 4}" y1="${my}" y2="${my}" stroke="var(--fg)" stroke-dasharray="3 3" stroke-width="1.4"/><text x="${X + w / 2}" y="${Hh - 6}" text-anchor="middle" font-size="10.5" font-family="JetBrains Mono, monospace" fill="var(--fg3)">${fmt.mesCurto(x.mes + '-15T12:00:00-03:00')}</text>`;
+        svg += `<rect x="${X}" y="${y}" width="${w}" height="${h}" rx="4" fill="${i === l.length - 1 ? (k === 'agua' ? '#6FB3D2' : '#E0A35A') : (k === 'agua' ? '#3D6D86' : '#8A6538')}"/><text x="${X + w / 2}" y="${y - 5}" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--fg)">${fmt.n1(x[k])}</text><line x1="${X - 4}" x2="${X + w + 4}" y1="${my}" y2="${my}" stroke="var(--fg)" stroke-dasharray="3 3" stroke-width="1.4"/><text x="${X + w / 2}" y="${Hh - 6}" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--fg3)">${fmt.mesCurto(x.mes + '-15T12:00:00-03:00')}</text>`;
       });
       svg += '</svg>';
       return `${voltar('Consumo')}<div class="seg light" style="align-self:flex-start"><button class="${k === 'agua' ? 'on' : ''}" data-act="mcons" data-v="agua">${ic('drop', 'sm')} Água</button><button class="${k === 'gas' ? 'on' : ''}" data-act="mcons" data-v="gas">${ic('flame', 'sm')} Gás</button></div>
@@ -1596,7 +1616,7 @@ function telaApp() {
         <p class="hello">${saud}, ${esc(primeiro(m.nome))}</p>
         <button class="mcard" style="text-align:left;cursor:pointer" data-act="mtela" data-v="correspondencias"><div class="row"><span class="lbl grow">Na portaria agora</span><span class="dim">${ic('right', 'sm')}</span></div>
           ${encs.length ? `<div style="font-size:13px"><b>${fmt.plural(encs.length, 'correspondência', 'correspondências')}</b> para retirar</div><div class="thumbs">${encs.slice(0, 3).map(e => `<div>${ilustra(e.tipo, Number(e.id.slice(4)))}<span>${esc(e.transportadora)}</span></div>`).join('')}</div>` : '<div class="muted" style="font-size:13px">Nada esperando por você.</div>'}</button>
-        ${atr.length || chs.length ? `<div class="row" style="gap:8px;align-items:stretch">${atr.length ? `<button class="mcard alert grow" data-act="mtela" data-v="financeiro"><span class="lbl" style="color:#F2A79F">Condomínio</span><b style="font-size:15px">Atrasado</b><span style="font-size:12px;color:var(--fg2)">${diasEntre(atr[0].vencimento, HOJE)} dias · cota de ${fmt.mes(atr[0].vencimento)}</span><b class="num">${fmt.brl2(atr[0].valor)}</b></button>` : ''}${chs.length ? `<button class="mcard alert warn grow" data-act="mtela" data-v="chamados"><span class="lbl" style="color:#F0D08A">Chamado</span><b style="font-size:14px;line-height:1.25">${esc(chs[0].titulo)}</b><span style="font-size:12px;color:var(--fg2)">${fmt.prazo(chs[0].prazo)}</span></button>` : ''}</div>` : ''}
+        ${atr.length || chs.length ? `<div class="row" style="gap:8px;align-items:stretch">${atr.length ? `<button class="mcard alert grow" data-act="mtela" data-v="financeiro"><span class="lbl" style="color:var(--bad-ink)">Condomínio</span><b style="font-size:15px">Atrasado</b><span style="font-size:12px;color:var(--fg2)">${diasEntre(atr[0].vencimento, HOJE)} dias · cota de ${fmt.mes(atr[0].vencimento)}</span><b class="num">${fmt.brl2(atr[0].valor)}</b></button>` : ''}${chs.length ? `<button class="mcard alert warn grow" data-act="mtela" data-v="chamados"><span class="lbl" style="color:var(--warn-ink)">Chamado</span><b style="font-size:14px;line-height:1.25">${esc(chs[0].titulo)}</b><span style="font-size:12px;color:var(--fg2)">${fmt.prazo(chs[0].prazo)}</span></button>` : ''}</div>` : ''}
         <div class="mods">${mods.map(([id, i, n, b]) => `<button class="mod" data-act="mtela" data-v="${id}"><span class="ib">${ic(i)}</span>${n}${b ? `<span class="badge">${b}</span>` : ''}</button>`).join('')}</div>
         <div class="lbl">Em breve</div>${proximos.map(p => `<div class="mcard" style="flex-direction:row;align-items:center">${ic('calendar')}<div class="grow"><b style="font-size:13px">${esc(p.t)}</b><div class="dim" style="font-size:11.5px">${p.s}</div></div>${p.pill}</div>`).join('')}`;
     }
@@ -1702,7 +1722,7 @@ function modalReserva(id) {
   abrirModal(`${modalH(`Reservar apto ${id}`)}<form data-form="reserva" data-u="${id}"><div class="modal-b">
     <label class="field"><span>Cliente</span><select class="inp" id="rs-cli">${cs.map(c => `<option value="${c.id}">${esc(c.nome)}${c.interesse === id ? ' · interessado nesta unidade' : ''}</option>`).join('')}</select></label>
     <label class="field"><span>Validade</span><select class="inp" id="rs-h"><option value="24">24 horas</option><option value="48">48 horas</option><option value="72" selected>72 horas</option></select></label>
-    <div class="m muted" style="font-size:12.5px">A unidade fica âmbar no espelho e sai do estoque até a reserva vencer ou ser cancelada.</div>
+    <div class="m muted" style="font-size:12.5px">A unidade sai do estoque e aparece como reservada até a reserva vencer ou ser cancelada.</div>
   </div><div class="modal-f"><button type="button" class="btn ghost" data-act="fechar">Cancelar</button><button class="btn pri" type="submit">${ic('clock', 'sm')} Reservar</button></div></form>`);
 }
 function modalNovaEncomenda() {
