@@ -50,7 +50,7 @@ Critério: |Δ| ≤ 0,5 s entre a ação e o início da palavra que a descreve.
 | C10 | garantia da construtora | 126.37 | garantia | 126.37 | +0.00 | ✓ |
 | C10 | financeiro | 130.47 | financeiro | 130.37 | +0.10 | ✓ |
 | C10 | inadimplência | 131.72 | inadimplência | 131.35 | +0.37 | ✓ |
-| C10 | cota em atraso | 133.15 | sozinha | 132.69 | +0.46 | ✓ |
+| C10 | cota em atraso | 133.16 | sozinha | 132.69 | +0.47 | ✓ |
 | C10 | 2ª via com Pix | 134.14 | via | 134.15 | -0.01 | ✓ |
 | C11 | encomendas do morador | 139.94 | encomendas | 139.75 | +0.19 | ✓ |
 | C11 | volta ao início (contas e chamados) | 142.10 | contas | 141.81 | +0.29 | ✓ |

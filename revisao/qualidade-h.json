@@ -8,7 +8,7 @@
  "freezedetect": [
   [
    16.6667,
-   2.53333
+   2.56667
   ],
   [
    54.3333,
@@ -17,42 +17,22 @@
   [
    58.6667,
    3.56667
-  ],
-  [
-   62.4667,
-   2.66667
-  ],
-  [
-   101.033,
-   2.5
   ]
  ],
  "quadros_revisao": 54,
  "sincronia_fora": [],
  "transcricao_diferencas": [
   {
-   "roteiro": "Passou",
-   "ouvido": "Assou"
-  },
-  {
-   "roteiro": "",
-   "ouvido": "e"
+   "roteiro": "num,",
+   "ouvido": "e nun"
   },
   {
    "roteiro": "QR Code.",
-   "ouvido": "que é recode."
+   "ouvido": "QR-Code."
   },
   {
-   "roteiro": "a",
-   "ouvido": "há"
-  },
-  {
-   "roteiro": "é",
-   "ouvido": ""
-  },
-  {
-   "roteiro": "Pix.",
-   "ouvido": "peaks."
+   "roteiro": "a inadimplência",
+   "ouvido": "ainda de implência"
   }
  ]
 }

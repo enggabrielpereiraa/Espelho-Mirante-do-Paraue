@@ -15,28 +15,16 @@
  "sincronia_fora": [],
  "transcricao_diferencas": [
   {
-   "roteiro": "Passou",
-   "ouvido": "Assou"
-  },
-  {
-   "roteiro": "",
-   "ouvido": "e"
+   "roteiro": "num,",
+   "ouvido": "e nun"
   },
   {
    "roteiro": "QR Code.",
-   "ouvido": "que é recode."
+   "ouvido": "QR-Code."
   },
   {
-   "roteiro": "a",
-   "ouvido": "há"
-  },
-  {
-   "roteiro": "é",
-   "ouvido": ""
-  },
-  {
-   "roteiro": "Pix.",
-   "ouvido": "peaks."
+   "roteiro": "a inadimplência",
+   "ouvido": "ainda de implência"
   }
  ]
 }
