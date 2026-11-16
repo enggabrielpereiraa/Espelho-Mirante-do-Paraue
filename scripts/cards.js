@@ -17,17 +17,19 @@ const L = VERT
   ? { ltLeft: 56, ltBottom: 300, legBottomGap: 28, legFont: 52, legMaxW: 968, ltTitle: 44, ltLabel: 22 }
   : { ltLeft: 72, ltBottom: 72, legBottomGap: 26, legFont: 44, legMaxW: 1240, ltTitle: 34, ltLabel: 16 };
 
-const fontFace = ['Regular:400', 'Medium:500', 'SemiBold:600', 'Bold:700', 'ExtraBold:800']
-  .map(x => { const [n, w] = x.split(':'); return `@font-face{font-family:Manrope;font-weight:${w};src:url(file://${p('assets', 'fonts', `Manrope-${n}.ttf`)})}`; }).join('')
-  + ['Regular:400', 'Medium:500', 'SemiBold:600'].map(x => { const [n, w] = x.split(':'); return `@font-face{font-family:'JetBrains Mono';font-weight:${w};src:url(file://${p('assets', 'fonts', `JetBrainsMono-${n}.ttf`)})}`; }).join('');
+// fontes embutidas como data URI: uma página criada por setContent não pode ler file://
+const b64 = arq => 'data:font/ttf;base64,' + fs.readFileSync(p('assets', 'fonts', arq)).toString('base64');
+const fontFace = ['Regular:400', 'Medium:500', 'SemiBold:600', 'Bold:700', 'Bold:800']
+  .map(x => { const [n, w] = x.split(':'); return `@font-face{font-family:'IBM Plex Sans';font-weight:${w};src:url(${b64(`IBMPlexSans-${n}.ttf`)})}`; }).join('')
+  + ['Regular:400', 'Medium:500', 'SemiBold:600'].map(x => { const [n, w] = x.split(':'); return `@font-face{font-family:'IBM Plex Mono';font-weight:${w};src:url(${b64(`IBMPlexMono-${n}.ttf`)})}`; }).join('');
 
 const BASE = `
 ${fontFace}
-:root{--bg:#0F1012;--fg:#ECE9E3;--cu:#C98A5E;--line:rgba(236,233,227,.16)}
+:root{--bg:#0F1012;--fg:#ECE9E3;--cu:#9CC0E4;--line:rgba(236,233,227,.16)}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:transparent;width:${W}px;height:${H}px;overflow:hidden}
-body{font-family:Manrope,sans-serif;color:var(--fg);-webkit-font-smoothing:antialiased;position:relative}
-.mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.18em}
+body{font-family:'IBM Plex Sans',sans-serif;color:var(--fg);-webkit-font-smoothing:antialiased;position:relative}
+.mono{font-family:'IBM Plex Sans',sans-serif;font-weight:500;letter-spacing:.01em}
 `;
 
 function htmlAbertura() {
@@ -35,7 +37,7 @@ function htmlAbertura() {
   return `<style>${BASE}
   .scrim{position:absolute;inset:0;background:radial-gradient(ellipse ${VERT ? '90% 45%' : '62% 58%'} at 50% 50%,rgba(15,16,18,.82),rgba(15,16,18,.55) 55%,rgba(15,16,18,.25) 100%)}
   .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:${18 * s}px}
-  .lbl{font-size:${18 * s}px;color:var(--cu);font-weight:500;letter-spacing:.32em}
+  .lbl{font-size:${18 * s}px;color:var(--cu);font-weight:500;letter-spacing:.02em}
   h1{font-size:${132 * s}px;font-weight:700;letter-spacing:-.03em;line-height:1}
   .rule{width:${72 * s}px;height:2px;background:var(--cu);margin:${10 * s}px 0 ${4 * s}px}
   .proj{font-size:${38 * s}px;font-weight:500;opacity:.86}
@@ -48,7 +50,7 @@ function htmlLT(c, i) {
       padding:${VERT ? '20px 30px 22px' : '15px 24px 17px'};display:flex;flex-direction:column;gap:${VERT ? 10 : 7}px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
   .n{font-size:${L.ltLabel}px;color:var(--cu);font-weight:500}
   .t{font-size:${L.ltTitle}px;font-weight:600;letter-spacing:-.01em;line-height:1.1;white-space:nowrap}
-  </style><div class="lt" id="el"><div class="n mono">${String(i + 1).padStart(2, '0')} / ${String(roteiro.length).padStart(2, '0')}</div><div class="t">${c.titulo}</div></div>`;
+  </style><div class="lt" id="el"><div class="t">${c.titulo}</div></div>`;
 }
 
 function htmlFinal() {
@@ -57,14 +59,14 @@ function htmlFinal() {
   .dim{position:absolute;inset:0;background:rgba(0,0,0,.4)}
   .c{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
   .card{background:rgba(15,16,18,.92);border:1px solid var(--line);border-radius:${18 * s}px;padding:${56 * s}px ${72 * s}px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:${16 * s}px;max-width:${VERT ? 940 : 1100}px}
-  .lbl{font-size:${16 * s}px;color:var(--cu);font-weight:500;letter-spacing:.3em}
+  .lbl{font-size:${16 * s}px;color:var(--cu);font-weight:500;letter-spacing:.02em}
   .nome{font-size:${76 * s}px;font-weight:700;letter-spacing:-.025em;line-height:1.05}
   .rule{width:${64 * s}px;height:2px;background:var(--cu);margin:${6 * s}px 0}
   .frase{font-size:${30 * s}px;font-weight:500;opacity:.9;line-height:1.3}
   .cts{display:flex;${VERT ? 'flex-direction:column;gap:' + 16 * s + 'px' : 'gap:' + 40 * s + 'px'};margin-top:${14 * s}px;justify-content:center}
   .ct{display:flex;flex-direction:column;gap:${6 * s}px;align-items:center}
-  .ct span{font-family:'JetBrains Mono',monospace;font-size:${13 * s}px;color:var(--cu);letter-spacing:.24em;text-transform:uppercase}
-  .ct b{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:${22 * s}px;color:var(--fg);opacity:.9;letter-spacing:.01em}
+  .ct span{font-size:${13 * s}px;color:var(--cu);letter-spacing:.01em}
+  .ct b{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:${22 * s}px;color:var(--fg);opacity:.9;letter-spacing:.01em}
   </style><div class="dim"></div><div class="c"><div class="card"><div class="lbl mono">${cfg.NOME_SISTEMA} · ${cfg.NOME_PROJETO}</div><div class="nome">${cfg.SEU_NOME}</div><div class="rule"></div>
   <div class="frase">Sistema sob medida para incorporadoras e condomínios</div>${cfg.CONTATOS ? `<div class="cts">${cfg.CONTATOS.map(x => `<div class="ct"><span>${x.rotulo}</span><b>${x.valor}</b></div>`).join('')}</div>` : `<div class="cts"><div class="ct"><b>${cfg.SEU_CONTATO}</b></div></div>`}</div></div>`;
 }
@@ -101,7 +103,7 @@ function htmlLegenda(q) {
         .bg{position:absolute;inset:0;background:url(data:image/png;base64,${fs.readFileSync(fr).toString('base64')}) 38% 50%/cover}
         .sh{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,16,18,.92) 0%,rgba(15,16,18,.78) 34%,rgba(15,16,18,.15) 66%,rgba(15,16,18,0) 100%)}
         .c{position:absolute;left:72px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:16px;width:640px}
-        .lbl{font-size:16px;color:var(--cu);font-weight:500;letter-spacing:.3em}
+        .lbl{font-size:16px;color:var(--cu);font-weight:500;letter-spacing:.01em}
         h1{font-size:112px;font-weight:800;letter-spacing:-.035em;line-height:.95}
         .rule{width:64px;height:3px;background:var(--cu);margin:6px 0}
         .sub{font-size:34px;font-weight:600;line-height:1.2;opacity:.95}

@@ -1,8 +1,8 @@
 {
   "tema": {
-    "fundo": "#EFEAE2",
+    "fundo": "#F3F1EC",
     "texto": "#17191C",
-    "acento": "#A9622F",
+    "acento": "#24507A",
     "linha": "rgba(23,25,28,.12)",
     "cartao": "#FFFFFF",
     "bitrate": "10M"

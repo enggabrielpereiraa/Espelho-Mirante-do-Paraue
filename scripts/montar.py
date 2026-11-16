@@ -14,7 +14,7 @@ W, H = (1080, 1920) if VERT else (1920, 1080)
 FPS = 30
 OUT = os.path.join(ROOT, 'out', 'apresentacao-vertical.mp4' if VERT else 'apresentacao-1080p.mp4')
 ZMAX, ZIN, ZOUT = 1.08, 2.5, 1.2
-LT_IN, LT_OUT, LT_FADE = 0.4, 0.6, 0.25
+LT_IN, LT_OUT, LT_FADE, LT_DUR = 0.4, 0.6, 0.25, 4.5
 LEG_FADE = 0.12
 ABERTURA = (0.0, 3.0, 0.6)            # início, fim, duração do fade
 FINAL_EM = 3.0                         # o card final entra aos 3 s da C12
@@ -125,7 +125,7 @@ def main():
         if not lt:
             continue
         ini = c['start'] + (a1 + 0.2 if c['id'] == 'C01' else LT_IN)
-        fim = c['start'] + c['dur'] - LT_OUT
+        fim = min(ini + LT_DUR, c['start'] + c['dur'] - LT_OUT)   # o título aparece e sai; não fica a cena inteira
         overlay(lt['png'], ini, fim, LT_FADE, lt['x'], lt['y'])
     # o card final (que escurece a imagem) vem antes das legendas, para não escurecê-las
     c12 = cenas[-1]
