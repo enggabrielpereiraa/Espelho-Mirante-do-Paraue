@@ -17,6 +17,7 @@
     "servir": "http-server demo -p 8080 -s -c-1",
     "story": "node scripts/story.js && python3 scripts/story.py",
     "test": "node --test --test-reporter=spec testes/*.test.js",
-    "ensaio": "node scripts/gravar.js --seco && node scripts/gravar.js --seco --vertical"
+    "ensaio": "node scripts/gravar.js --seco && node scripts/gravar.js --seco --vertical",
+    "preparar": "npm install && pip install -r requirements.txt && bash scripts/baixar-modelos.sh"
   }
 }

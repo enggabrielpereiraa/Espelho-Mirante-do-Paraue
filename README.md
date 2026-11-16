@@ -20,15 +20,30 @@ O controle de qualidade fica em `revisao/`: `sincronia.md` (cada clique × a pal
 - Node 20+ e Python 3.10+
 - ffmpeg e ffprobe no PATH
 - Playwright com Chromium (`npx playwright install chromium`, se ainda não tiver)
-- Pacotes Python: `pip install kokoro-onnx soundfile faster-whisper opencv-python-headless numpy` (e `edge-tts` se for usar a voz da Microsoft)
-- `npm install` nesta pasta
 
-Os modelos de voz e de transcrição (cerca de 330 MB) são baixados pelo npm na primeira execução (`npm run modelos`) e ficam em `models/`. Não precisa de GPU.
+```bash
+npm run preparar
+```
+
+Instala as dependências do Node, as do Python (`requirements.txt`, com versões fixas) e baixa pelo npm os modelos de voz e de transcrição (cerca de 330 MB, em `models/`). Não precisa de GPU.
+
+## Testar a demo
+
+```bash
+npm test          # 9 testes dos fluxos principais, sem internet (~25 s)
+npm run ensaio    # passa as 12 cenas do vídeo em modo rápido, sem gravar (~4 min)
+```
+
+Rode os dois depois de qualquer mudança em `demo/`. A demo carrega o Three.js e o gerador de QR de `demo/vendor/`; só as fontes vêm da internet.
+
+## Skills do Claude Code
+
+Em `.claude/skills/`: `refazer-video`, `regravar-cena`, `story-instagram`, `trocar-voz`, `revisar-qualidade`, `ensaio-demo`, `cara-de-ia` e `novo-cliente`. O `CLAUDE.md` da raiz resume os comandos, a regra dos seletores e as decisões que não devem ser desfeitas.
 
 ## Refazer o vídeo inteiro
 
 ```bash
-npm install
+npm run preparar
 npm run video
 ```
 

@@ -16,15 +16,14 @@ Registro do que foi decidido durante a produção, e por quê. Em ordem de impac
 - O Chromium roda em modo headless (não há tela nem GPU para o modo com janela), com `--use-angle=swiftshader`.
 
 ### 2.1 Sem o blur de 3 px atrás dos modais
-- No SwiftShader, o `backdrop-filter: blur(3px)` do `.scrim` (fundo dos modais) sobre o canvas 3D fica cada vez mais caro a cada quadro (de 4 s para mais de 40 s por quadro) e trava a gravação. Durante a gravação o blur é desligado e fica só o escurecimento original do fundo (`rgba(6,7,8,.62)`). Numa máquina com GPU isso não acontece; na demo real o blur continua lá.
+- No SwiftShader, o `backdrop-filter: blur(3px)` do `.scrim` (fundo dos modais) sobre o canvas 3D ficava cada vez mais caro a cada quadro (de 4 s para mais de 40 s por quadro) e travava a gravação. Primeiro foi desligado só na gravação; na rodada de melhorias saiu da própria demo, que agora usa um fundo sólido um pouco mais escuro (`rgba(6,7,8,.72)`). Motivo: notebook de corretor sem placa de vídeo sofre do mesmo problema.
 
-## 3. Dependências da demo servidas localmente
-- jsDelivr (Three.js 0.160.0) e cdnjs (qrcodejs 1.0.0) estão bloqueados na rede. As mesmas versões foram instaladas pelo npm e o Playwright intercepta essas URLs e responde com os arquivos locais. As fontes do Google (Manrope e JetBrains Mono) também são servidas de `assets/fonts/`. Isso deixa a gravação determinística e independente da internet.
-- `demo/index.html` **não foi alterado**.
+## 3. Dependências da demo
+- Three.js 0.160.0 e qrcodejs 1.0.0 agora ficam em `demo/vendor/` (com as licenças) e a demo carrega dali; as CDNs (jsDelivr e cdnjs) viraram plano B. Antes vinham só de CDN, e em rede bloqueada o 3D sumia. Os testes rodam com a rede externa cortada para garantir isso.
+- As fontes (Manrope e JetBrains Mono) continuam vindo do Google Fonts; sem rede, a demo usa a fonte do sistema. Na gravação, o Playwright serve as fontes de `assets/fonts/`.
 
-## 4. Bug da demo corrigido só durante a gravação
-- No shader do céu (`demo/index.html`, linha ~2077), o `#include <tonemapping_fragment>` está no meio de uma linha. O GLSL exige diretiva no começo da linha: o shader não compila e o céu não aparece (há erro no console do navegador). **Isso acontece em qualquer navegador, inclusive no do cliente.**
-- Na gravação, a página é servida com uma quebra de linha antes do `#include` (`scripts/lib/browser.js`). O arquivo original fica intacto. **Recomendo corrigir na demo real** (trocar `gl_FragColor = vec4(c,1.0); #include` por `gl_FragColor = vec4(c,1.0);\n#include`).
+## 4. Bug do shader do céu
+- No shader do céu, o `#include <tonemapping_fragment>` estava no meio de uma linha. O GLSL exige diretiva no começo da linha: o shader não compilava e o céu não aparecia em nenhum navegador. Corrigido em `demo/index.html`; o remendo que existia em `scripts/lib/browser.js` foi removido.
 
 ## 5. Legendas como PNG em vez do filtro `subtitles`
 - O libass (filtro `subtitles`) não faz caixa de fundo com cantos arredondados. Para cumprir o estilo pedido (Manrope 600, 44/52 px, fundo `rgba(15,16,18,.78)`, cantos de 8 px), cada bloco de legenda é renderizado em HTML → PNG transparente e sobreposto com fade de 120 ms. O `out/legendas.srt` é gerado à parte, com os mesmos tempos e quebras.
@@ -68,3 +67,11 @@ Registro do que foi decidido durante a produção, e por quê. Em ordem de impac
 
 ## 12. Música
 - `assets/musica.mp3` não existe, então o vídeo sai só com voz. A mixagem com música (−28 LUFS, fades de 2 s e 3 s, ducking com `sidechaincompress` threshold 0.02 / ratio 8 / attack 20 / release 400) está implementada em `scripts/montar.py` e entra automaticamente quando o arquivo existir.
+
+## 13. Rodada de melhorias (fases 0 a 3 do `PROMPT-MELHORIAS.md`)
+- **HTML da demo reorganizado**: um `<head>` só, com título, descrição, favicon (SVG embutido), `theme-color` e tags Open Graph. A metatag `claude:viewport-fit-sides` saiu.
+- **`og:image` aponta para `og.png` com caminho relativo.** WhatsApp e redes sociais exigem endereço absoluto: quando a demo tiver um domínio, trocar para `https://dominio/og.png`. Sem isso a prévia aparece só com título e descrição.
+- **Telefones e e-mails fictícios não foram "realistados"** (item 6 da seção 2.1). Os botões "WhatsApp" e "Avisar no WhatsApp" abrem conversa de verdade com o número cadastrado; um número com cara de real pode ser de alguém. Ficaram `(11) 90000-xxxx` e `@example.com`, que não pertencem a ninguém. Para tirar a cara de exemplo, o caminho é usar dados reais do cliente piloto, com autorização.
+- **Testes** em `testes/fluxos.test.js` com `node:test` + Playwright (sem dependência nova): 9 testes, ~25 s, com a rede externa bloqueada. Conferem números de verdade (contagens, valor com desconto, código Pix), então mudar os dados fictícios pode exigir ajustar o teste.
+- **Os vídeos em `out/` são de antes desta rodada.** A única diferença visível seria o fundo dos modais um pouco mais escuro (0,72 em vez de 0,62). Não regravei por isso.
+- **Skills** em `.claude/skills/` e `CLAUDE.md` na raiz. A skill `novo-cliente` descreve só o que existe hoje e diz o que falta (tema por cliente, modelo 3D real, fotos).
