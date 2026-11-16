@@ -132,7 +132,8 @@ const cenas = {
       const x = S.v ? 230 : 980;
       await S.at(0.6);
       await S.drv.drag(x, c.y, x - (S.v ? 70 : 170), c.y, 2600, 4);
-      await S.drv.moveTo(S.v ? 300 : 700, S.v ? 200 : 300, 800);
+      // estaciona fora do prédio: parado em cima de uma unidade, o cursor abre o tooltip dela
+      await S.drv.moveTo(S.v ? 300 : 1260, S.v ? 200 : 150, 800);
       await S.clickAt('[data-act="mode"][data-v="condo"]', S.w('modo') + 0.25, { label: 'modo condomínio' });
       await S.clickAt('[data-act="ctab"][data-v="encomendas"]', S.w('encomendas') + 0.1, { label: 'aba encomendas' });
       await S.clickAt('[data-act="ctab"][data-v="chamados"]', S.w('chamados') + 0.1, { label: 'aba chamados' });
